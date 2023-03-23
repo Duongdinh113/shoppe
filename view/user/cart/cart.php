@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACCOUNT-ADRESS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
@@ -25,8 +25,8 @@
                         <li><a href="">Blog</a></li>
                         <li><a href="">Our Story</a></li>
                         <li><a href="">|</a></li>
-                        <li><a href=""><img src="img/Icon color(2).png" alt=""></i></i></a></li>
-                        <li><a href=""> <img src="img/Vector(1).png" alt=""></a></li>
+                        <li><a href=""><img src="../img/Icon color(2).png" alt=""></i></i></a></li>
+                        <li><a href=""> <img src="../img/Vector(1).png" alt=""></a></li>
                         <li><a href=""><i class="fa-regular fa-user"></i></a></li>
 
 
@@ -74,7 +74,7 @@
                         <div class="shoppe-cart">
                             <div class="cart1">
                                 <div class="anh">
-                                    <img src="img/Img 01(1).png" alt="">
+                                    <img src="../img/Img 01(1).png" alt="">
                                 </div>
                                 <div class="cart-text">
                                     <h3>Lira Earrings</h3>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="cart1">
                                 <div class="anh">
-                                    <img src="img/Img 01(1).png" alt="">
+                                    <img src="../img/Img 01(1).png" alt="">
                                 </div>
                                 <div class="cart-text">
                                     <h3>Lira Earrings</h3>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="cart1">
                                 <div class="anh">
-                                    <img src="img/Img 01(1).png" alt="">
+                                    <img src="../img/Img 01(1).png" alt="">
                                 </div>
                                 <div class="cart-text">
                                     <h3>Lira Earrings</h3>
@@ -164,7 +164,6 @@
                     </div>
                     <div class="ORDER Summary">
                         <h2>Cart totals</h2>
-
                         <div class="adress2">
                             <div class="order-number">
                                 <div class="adress-box">

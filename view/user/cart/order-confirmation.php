@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACCOUNT-ORDER</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
@@ -24,8 +24,8 @@
                         <li><a href="">Blog</a></li>
                         <li><a href="">Our Story</a></li>
                         <li><a href="">|</a></li>
-                        <li><a href=""><img src="img/Icon color(2).png" alt=""></i></i></a></li>
-                        <li><a href=""> <img src="img/Vector(1).png" alt=""></a></li>
+                        <li><a href=""><img src="../img/Icon color(2).png" alt=""></a></li>
+                        <li><a href=""> <img src="../img/Vector(1).png" alt=""></a></li>
                         <li><a href=""><i class="fa-regular fa-user"></i></a></li>
 
 

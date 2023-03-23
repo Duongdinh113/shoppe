@@ -420,16 +420,8 @@ hr {
     margin-bottom: 10px;
 }
 
-.cart-button button {
-    width: 50px;
-    height: 30px;
-}
 
-#input-cart {
-    text-align: center;
-    width: 20px;
-    height: 20px;
-}
+
 
 .btn-cart {
     width: 250px;
@@ -553,11 +545,16 @@ hr {
 .content-shipping-bag .div p {
     font-weight: 400;
     font-size: 16px;
-   margin: 5px;
+    margin: 5px;
 
 }
+
 .content-shipping-bag .div li {
     font-weight: 400;
     font-size: 12px;
-margin: 5px;
+    margin: 5px;
+}
+
+.menu2 a:hover {
+    color: red;
 }
