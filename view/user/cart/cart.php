@@ -97,7 +97,7 @@
                             </div>
                             <div class="cart1">
                                 <div class="anh">
-                                    <img src="../img/Img 01(1).png" alt="">
+                                    <img src="../img/Img 02(2).png" alt="">
                                 </div>
                                 <div class="cart-text">
                                     <h3>Lira Earrings</h3>
@@ -115,7 +115,7 @@
                             </div>
                             <div class="cart1">
                                 <div class="anh">
-                                    <img src="../img/Img 01(1).png" alt="">
+                                    <img src="../img/Img 03(2).png" alt="">
                                 </div>
                                 <div class="cart-text">
                                     <h3>Lira Earrings</h3>
