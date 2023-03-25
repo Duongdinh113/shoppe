@@ -24,35 +24,37 @@ minus.addEventListener("click", () => {
     }
 
 });
+let b=1;
 plu.addEventListener("click", () => {
-    a++;
-    a = (a < 10) ? +a : a;
-    nu.innerText = a;
+    b++;
+    b = (b < 10) ? +b : b;
+    nu.innerText = b;
    
 
 });
 
 minu.addEventListener("click", () => {
-    if (a > 1) {
-        a--;
-        a = (a < 10) ? +a : a;
-        nu.innerText = a;
+    if (b > 1) {
+        b--;
+        b = (b < 10) ? +b : b;
+        nu.innerText = b;
     }
 
 });
+let c = 1;
 pl.addEventListener("click", () => {
-    a++;
-    a = (a < 10) ? +a : a;
-    number.innerText = a;
+    c++;
+    c = (c < 10) ? +c : c;
+    number.innerText = c;
   
 
 });
 
 mi.addEventListener("click", () => {
-    if (a > 1) {
-        a--;
-        a = (a < 10) ? +a : a;
-        number.innerText = a;
+    if (c > 1) {
+        c--;
+        c = (c < 10) ? +c : c;
+        number.innerText = c;
     }
 
 });
