@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACCOUNT-ADRESS</title>
+    <title>CART</title>
     <link rel="stylesheet" href="../css/style.css">
-
+   
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
+<style>
+
+</style>
 
 <body>
     <div class="container">
@@ -81,21 +85,15 @@
                                     <p>Black / Medium</p>
                                     <span>$ 20,00</span>
                                 </div>
-                                <div class="cart-button">
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
-                                        </svg>
-                                    </button>
-                                    <input type="number" value="1" name="" id="input-cart">
-
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round"
-                                                d="M12 4.5v15m7.5-7.5h-15" />
-                                        </svg>
-                                    </button>
+                                <div id="add">
+                                    <div class="addtion">
+                                        <span class="minus">-</span>
+                                        <span class="num">1</span>
+                                        <span class="plus">+</span>
+                                    </div>
+                                    
                                 </div>
+                                <div class="loai"><span>&#10005;</span></div>
                             </div>
                             <div class="cart1">
                                 <div class="anh">
@@ -106,20 +104,14 @@
                                     <p>Black / Medium</p>
                                     <span>$ 20,00</span>
                                 </div>
-                                <div class="cart-button">
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
-                                        </svg>
-                                    </button>
-                                    <input type="number" value="1" name="" id="">
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round"
-                                                d="M12 4.5v15m7.5-7.5h-15" />
-                                        </svg>
-                                    </button>
+                                <div id="add">
+                                    <div class="addtion">
+                                        <span class="minu">-</span>
+                                        <span class="nu">1</span>
+                                        <span class="plu">+</span>
+                                    </div>
                                 </div>
+                                <div class="loai"><span>&#10005;</span></div>
                             </div>
                             <div class="cart1">
                                 <div class="anh">
@@ -130,21 +122,15 @@
                                     <p>Black / Medium</p>
                                     <span>$ 20,00</span>
                                 </div>
-                                <div class="cart-button">
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
-                                        </svg>
-                                    </button>
-                                    <input type="number" value="1" name="" id="">
 
-                                    <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round"
-                                                d="M12 4.5v15m7.5-7.5h-15" />
-                                        </svg>
-                                    </button>
+                                <div id="add">
+                                    <div class="addtion">
+                                        <span class="mi">-</span>
+                                        <span class="number">1</span>
+                                        <span class="pl">+</span>
+                                    </div>
                                 </div>
+                                <div class="loai"><span>&#10005;</span></div>
                             </div>
                             <hr>
                             <div class="cart1">
@@ -153,9 +139,9 @@
                             <div class="adress">
                                 <div>
                                     <h5>Coupon Code</h5>
-                                <hr>
+                                    <hr>
                                 </div>
-                               
+
                                 <div class="checkout-apply"><button><a href="">APPLY COUPON</a></button></div>
                                 <div class="div"></div>
                             </div>
@@ -212,7 +198,7 @@
 
 
                                 </div>
-                                <hr>
+
 
 
 
@@ -230,7 +216,7 @@
                             </div>
 
                             <div class="adress-box">
-                                <h3>$ 87,00</h3>
+                                <h3>$87,00</h3>
 
                             </div>
 
@@ -266,7 +252,7 @@
             <div class="footer2">
                 <div class="text3">
                     <h4>Give an email, get the newsletter.</h4>
-                    <p style="width:200px;"> &#8594;</p>
+                    <p> &#8594;</p>
                 </div>
                 <hr>
                 <ul>
@@ -279,6 +265,9 @@
         </div>
     </div>
     </div>
+   <script src ="../javascript.js">
+
+   </script>
 </body>
 
 </html>
