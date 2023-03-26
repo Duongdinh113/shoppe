@@ -12,9 +12,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
     <title>Document</title>
 </head>
 <style>
-    table,th,td{
-        border: 1px solid black;
-    }
+    
 </style>
 <body>
 <?php
