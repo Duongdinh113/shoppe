@@ -84,7 +84,9 @@
                     <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="text" placeholder="Nguyễn Hoàng Tiến" name="username" id="username" required="" minlength="6"> <br>
 
                     <label for="">Email</label> <br>
+                    
                     <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="email" placeholder="tiennh21@gmail.com" name="email" id="email" required=""  > <br>
+                   <label for="">Image</label>
                     <input type="file" name="avatar"> <br>
                     <label for="">Mật Khẩu</label> <br>
                     <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="password" minlength="6" required="" placeholder="*********" name="password" id="password"> <br>

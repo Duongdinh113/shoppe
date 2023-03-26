@@ -25,6 +25,7 @@
         <input type="text" name="product-name" placeholder="Product Name" class="w-full border mt-8" value="<?php echo $product["name"]?>"  class="w-full border mt-8">
         <textarea name="product-desc" id="" cols="30" rows="10" placeholder="Product Desc" class="w-full border mt-8"><?php echo $product["descrtiption"]?></textarea>
         <input type="file" name="product-image" class="w-full border mt-8">
+        <input type="text" name="old-image" value="<?php echo $product['image']?>" hidden>
         <input type="text" name="product-price" placeholder="Product Price" class="w-full border mt-8" value="<?php echo $product["price"]?>">
         <select name="category" id=""  class="w-full border mt-8">
             <?php
