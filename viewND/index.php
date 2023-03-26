@@ -5,44 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Indext</title>
 </head>
 
 <body>
     <?php
     session_start();
     ?>
-         <div class="flex justify-center">
-       <div class="max-w-[1000px] border-[1px] gap-[130px] flex my-[20px] items-center">
-    <div>
-    <?php 
-    require "header.php";
-    echo headerRender();
-    ?>
-    </div>
-    <div>
-    <?php 
-    
-    if(empty($_SESSION["email"])){
-        echo ' <div class="flex  gap-4 border-[1px]">
-        <a href="dangNhap.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng nhập</button></a>
-        <a href="dangKi.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng kí</button></a>
-        </div>';
-    }else{  
-       echo '<div class="text-center w-[216px]">
-       <a class="" href="../control/login_out.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng xuất</button></a>
-       <p class="text-[#0066B2] text-[17px]">'.$_SESSION["email"].'</p>
+   
        
-        </div>';
+           
+                <div class="header">
+                    <div class="menu1">
+                        <h1><img src="image/logo.png" alt=""></h1>
+                    </div>
+
+                    <div class="menu2">
+                        <ul class="">
+                            <li><a href="index.php">Trang Chủ</a></li>
+                            <li><a href="sanpham.php">Sản Phẩm </a></li>
+                            <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                            <li><a href="">Liên Hệ </a></li>
+                            <li><a href="./giohang.php">GIỏ Hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <?php
+        if(empty($_SESSION["email"])){
+            echo ' <div >
+            <button > <a href="dangNhap.php">Đăng nhập</a></button>
+            <button >  <a href="dangKi.php">Đăng kí</a></button>
+            </div>';
+        }else{  
+           echo '<div class="text-center w-[216px]">
+           <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
+           <p >'.$_SESSION["email"].'</p>
+           
+            </div>';
+        }
+        ?>
+
+
+
+                    </div>
+               
+            </div>
+            <div>
+
+        
+   
     
-    }
-  
-?>
-    </div>
-    </div>
-    </div>
-        ';
     <?php
 
         require '../models/connect.php';
@@ -53,60 +67,71 @@
         
         
     ?>
-   
-   
-    
-     
-        <div class="flex justify-center">
-            <div class="max-w-[1000px] border-[1px] flex gap-5 my-[20px]">
-                <?php  for($i = 0; $i < 4; $i++):?>
-                <div class="grid gap-y-[10px]">
-                    <img class="max-w-full" src="<?php echo "../image/".$productList[$i]["image"]?>">
-                    <h3>
-                        <?php echo $productList[$i]["name"]?>
-                    </h3>
-                    <h3 class="text-[gray]">
-                        <?php echo $productList[$i]["descrtiption"]?>
-                    </h3>
-                    <h3 class="text-[red]">
-                        <?php echo $productList[$i]["price"]."$"?>
-                    </h3>
-                </div>
-                <?php endfor?>
 
+
+
+
+    <div  >
+        <div class="product mr" >
+            <?php  for($i = 0; $i < 4; $i++):?>
+            <div >
+               <div class="div"> <img  src="<?= " ../image/".$productList[$i]["image"]?>"> </div>
+                <h3>
+                    <?= $productList[$i]["name"]?>
+                </h3>
+                <p >
+                    <?= $productList[$i]["descrtiption"]?>
+                </p>
+                <span >
+                    <?= $productList[$i]["price"]."$"?>
+                </span>
             </div>
+            <?php endfor?>
 
         </div>
-        <div class="flex justify-center">
-            <p class="pt-[10px] text-center h-[50px] border-[1px] w-[200px] border-[#F26F21] text-[#F26F21]">Show more</p>
+           
+    </div>
+    <div class="showadd mr">
+    <h1>Show more</h1>
+
+
+    <h2>Tips & Tricks</h2>
+
+
+    <div class="tips">
+        <div class="tips-box">
+            <img src="image/item5.png" alt="">
+            <p>How to create a living room to love</p>
+            <p>20 jan 2020</p>
         </div>
-        <div class="flex justify-center my-[20px]">
-            <p class="text-[30px] font-bold">Tips & Tricks</p>
+        <div class="tips-box">
+            <img src="image/item6.png" alt="">
+            <p>Solution for clean look working space
+            </p>
+            <p>10 jan 2020</p>
+        </div >
+        <div class="tips-box">
+            <img src="image/item7.png" alt="">
+            <p class="font-bold">Make your cooking activity more fun with good setup</p>
+            <p>20 jan 2020</p>
         </div>
-        <div class="flex justify-center">
-            <div class="max-w-[1000px] border-[1px] flex gap-5 my-[20px]">
-                <div class="grid gap-y-[10px]">
-                    <img class="max-w-full" src="image/item5.png" alt="">
-                    <p class="font-bold">How to create a living room to love</p>
-                    <p class="text-[gray] text-[12px]">20 jan 2020</p>
-                </div>
-                <div class="grid gap-y-[10px]">
-                    <img class="max-w-full" src="image/item6.png" alt="">
-                    <p class="font-bold">Solution for clean look working space
-                    </p>
-                    <p class="text-[gray] text-[12px]">10 jan 2020</p>
-                </div>
-                <div class="grid gap-y-[10px]">
-                    <img class="max-w-full" src="image/item7.png" alt="">
-                    <p class="font-bold">Make your cooking activity more fun with good setup</p>
-                    <p class="text-[gray] text-[12px]">20 jan 2020</p>
-                </div>
+    </div>
+</div>
             </div>
-        </div>
-    <?php 
-        require "foodter.php";
-        echo foodterRender();
-    ?>
+</div>
+<div class="footer mr">
+  <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
+    <div class="menu2">
+        <ul class="">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">ABOUT US </a></li>
+            <li><a href="">CONTRACT US </a></li>
+
+        </ul>
+    </div>
+</div>   
+  
 </body>
 
 </html>

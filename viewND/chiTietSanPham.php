@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>CHI TIẾT SẢN PHẨM </title>
 </head>
 <body>
     
@@ -40,16 +40,16 @@
     }
     ?>
     <?php foreach($product as $details):?>
-        <img src="<?php echo "../image/".$details["image"]?>" alt="">
-        <h2><?php echo $details["descrtiption"]?></h2>
+        <img src="<?= "../image/".$details["image"]?>" alt="">
+        <h2><?= $details["descrtiption"]?></h2>
         
         <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
-        <input type="text" hidden value="<?php echo $id_p?>" name="id_p" id="">
-        <input type="text" hidden value="<?php echo $id_user?>" name="id_user" id="">
-        <input type="text" hidden value="<?php echo $p['name']?>" name="name" id="">
+        <input type="text" hidden value="<?= $id_p?>" name="id_p" id="">
+        <input type="text" hidden value="<?= $id_user?>" name="id_user" id="">
+        <input type="text" hidden value="<?= $p['name']?>" name="name" id="">
         <input type="number" min="1" value="1" name="sl" id="">
-        <input type="text" hidden value="<?php echo $p['image']?>" name="image" id="">
-        <input type="text" hidden value="<?php echo $p['price']?>" name="price" id=""> <br>
+        <input type="text" hidden value="<?= $p['image']?>" name="image" id="">
+        <input type="text" hidden value="<?= $p['price']?>" name="price" id=""> <br>
         <a class="border-[2px] bg-[blue] text-[white] font-bold" href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
     </form>
          
@@ -58,9 +58,9 @@
     <hr class="my-[20px]">
     <?php foreach($comment as $bl):?>
         <div class="my-[20px]">
-        <h2 class="font-bold"><?php echo $bl["name"]?></h2>
-        <h2><?php echo $bl["date"]?></h2>
-        <h4><?php echo $bl["comment"]?></h4>
+        <h2 class="font-bold"><?= $bl["name"]?></h2>
+        <h2><?= $bl["date"]?></h2>
+        <h4><?= $bl["comment"]?></h4>
         </div>
     <?php endforeach?>
     <hr class="my-[20px]">
@@ -76,9 +76,9 @@
     ?>
     <form action="../control/comment.php" method="POST">
     <div class="grid">
-        <input type="text" hidden value="<?php echo $id?>" name="id_p" id="">
-        <input type="text" hidden value="<?php echo $_SESSION["email"]?>" name="name" id="">
-        <input type="text" hidden value="<?php echo $_SESSION["id"]?>" name="id_u" id="">
+        <input type="text" hidden value="<?= $id?>" name="id_p" id="">
+        <input type="text" hidden value="<?= $_SESSION["email"]?>" name="name" id="">
+        <input type="text" hidden value="<?= $_SESSION["id"]?>" name="id_u" id="">
         
         <textarea class="border-[2px] border-[black]" name="comment" id="" cols="30" rows="10" placeholder="sản phẩm tốt"></textarea>
         <button class="">Bình Luận</button>

@@ -5,16 +5,48 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+       <link rel="stylesheet" href="css/style.css">
+        <title>ĐĂNG NHẬP</title>
     </head>
 
 
     <body class="max-w-full m-auto">
-        <?php 
-            require "header.php";
-            echo headerRender();
-        ?> 
+    <div class="header">
+                    <div class="menu1">
+                        <img src="image/logo.png" alt="">
+                    </div>
+
+                    <div class="menu2">
+                        <ul class="">
+                            <li><a href="index.php">Trang Chủ</a></li>
+                            <li><a href="sanpham.php">Sản Phẩm</a></li>
+                            <li><a href="giam_gia.php">Hàng giảm giá</a></li>
+                            <li><a href="">Liên Hệ</a></li>
+                            <li><a href="./giohang.php">giỏ hàng</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <?php
+        if(empty($_SESSION["email"])){
+            echo ' <div >
+            <a href="dangNhap.php"><button >Đăng nhập</button></a>
+            <a href="dangKi.php"><button >Đăng kí</button></a>
+            </div>';
+        }else{  
+           echo '<div class="text-center w-[216px]">
+           <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
+           <p >'.$_SESSION["email"].'</p>
+           
+            </div>';
+        }
+        ?>
+
+
+
+                    </div>
+               
+            </div>
+            <div>
         <p class="absolute top-[380px] right-[500px] font-bold text-[20px] text-[red]">
         <?php 
             session_start();

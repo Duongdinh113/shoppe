@@ -9,7 +9,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GIỎ HÀNG </title>
 </head>
 <style>
     table,th,td{
@@ -44,11 +44,11 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
             <?php foreach($pr as $pro):?>
             <tr>
                 <?php $count = $count + 1?>
-                <td><?php echo $count?></td>
-                <td><h3><?php echo $pro['name']?></h3></td>
-                <td><img src="<?php echo "../image/".$pro['image']?>" alt=""></td>
-                <td><input type="number" value="<?php echo $pro['sl']?>" name="" id=""></td>
-                <td> <h3><?php echo $pro['gia']?></h3></td>
+                <td><?= $count?></td>
+                <td><h3><?= $pro['name']?></h3></td>
+                <td><img src="<?= "../image/".$pro['image']?>" alt=""></td>
+                <td><input type="number" value="<?= $pro['sl']?>" name="" id=""></td>
+                <td> <h3><?= $pro['gia']?></h3></td>
                
                <?php 
                 
@@ -69,7 +69,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><?php echo $tong?></td>
+                <td><?= $tong?></td>
             </tr>
         </tbody>
     </table>
