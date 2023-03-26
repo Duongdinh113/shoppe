@@ -110,6 +110,9 @@ border-radius: 5px;
 .mr{
     margin-top: 50px;
 }
+.mr1{
+    margin-top: 10px;
+}
 .showadd h1{
     text-align: center;
 
@@ -139,4 +142,9 @@ margin-left: 10%;
     grid-template-columns: 1fr 1fr;
     margin-top: 100px;
    
+}
+.formdk input{
+    width: 300px;
+    height: 20px;
+
 }
