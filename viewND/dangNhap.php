@@ -5,17 +5,59 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
+       <link rel="stylesheet" href="css/style.css">
+        <title>ĐĂNG NHẬP</title>
     </head>
 
 
-    <body class="max-w-full m-auto">
-        <?php 
-            require "header.php";
-            echo headerRender();
-        ?> 
-        <p class="absolute top-[380px] right-[500px] font-bold text-[20px] text-[red]">
+    <body >
+    <div class="header">
+                    <div class="menu1">
+                        <h1><img src="image/logo.png" alt=""></h1>
+                    </div>
+
+                    <div class="menu2">
+                        <ul class="">
+                            <li><a href="index.php">Trang Chủ</a></li>
+                            <li><a href="sanpham.php">Sản Phẩm </a></li>
+                            <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                            <li><a href="">Liên Hệ </a></li>
+                            <li><a href="./giohang.php">Giỏ Hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <?php
+        if(empty($_SESSION["email"])){
+            echo ' <div >
+            <button > <a href="dangNhap.php">Đăng nhập</a></button>
+            <button >  <a href="dangKi.php">Đăng kí</a></button>
+            </div>';
+        }else{  
+           echo '<div >
+           <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
+           <p >'.$_SESSION["email"].'</p>
+           
+            </div>';
+        }
+        ?>
+
+
+
+                    </div>
+               
+           
+            <div>
+
+        
+    
+            </div>
+          
+  
+  
+    </div>
+   
+    <div >
+        <p >
         <?php 
             session_start();
             /*
@@ -62,42 +104,44 @@
 
         ?>
         </p>
-        <div class="flex justify-center my-[100px]">
-            <div class="flex max-w-[700px] gap-5 items-center">
-                <div class="max-w-[350px]">
-                    <img class="max-w-full" src="image/item9.png" alt="">
+        <div >
+            <div class="footer" >
+                <div >
+                    <img  src="image/item9.png" alt="">
                 </div>
-                <div class="max-w-[350px]">
-                    <div class="text-center">
-                        <p class="font-bold text-[24px] text-[#37A9CD]">Đăng nhập</p>
+                <div >
+                    <div >
+                       <h2 style="text-align:center">ĐĂNG NHẬP</h2>
                     </div>
-                    <form class="grid gap-y-[7px]" action="./dangNhap.php" method="POST">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label><br>
+                    <form class="formdk"  action="./dangNhap.php" method="POST">
+                        <div class="mr1">
+                            <label for="exampleInputEmail1" >Email</label><br>
                             
-                            <input  class="w-[360px] h-[40px]  pl-[5px] border-[#37A9CD] border-[1px] rounded" type="email" placeholder="dinhdvph29050@gamil.com" name="email" required="">
+                            <input   placeholder="dinhdvph29050@gamil.com" name="email" required="">
                         
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Mật khẩu<br>
-                            <input class="w-[360px] h-[40px]  pl-[5px] border-[#37A9CD] border-[1px] rounded" required=""  type="password" name="pass">
+                        <div   class="mr1">
+                            <label for="exampleInputPassword1" >Mật khẩu<br>
+                            <input  required=""  type="password" name="pass">
                         </div>
-                        <div>
-                        
-                        </div>
-                        <div class="grid gap-y-[10px] pt-[60px]">
-                            <button class="w-[360px] h-[40px] bg-[#37A9CD] font-bold text-[white] border-[1px] border-[#37A9CD]  rounded" type="submit" name="btn">Đăng nhập ngay</button>
-                            <button class="w-[360px] h-[40px] bg-[#37A9CD] font-bold text-[white] border-[1px] border-[#37A9CD]  rounded items-center flex justify-center" type="submit" class="btn btn-primary">
+                       
+                        <div class="dangnhap" >
+                            <div class="dangnhap1 mr1"><button    type="submit" name="btn">Đăng nhập ngay</button></div>
+                            
+                          <div class="dangnhap2 mr1">
+                            <button    type="submit" class="btn btn-primary">
                                 <img src="image/iconfinder_Google_1298745 1.png" alt="">
                                 <p>Đăng nhập với tài khoản Google</p> 
                             </button>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <a class="text-[#37A9CD]" href="">Quên mật khẩu</a>
-                            <p>bạn chưa có tài khoản?<a class="text-[#37A9CD]" href="dangKi.php">Đăng kí ngay</a></p>
+                        <div class="dangnhap3 mr">
+                           <button> <a  href="">Quên mật khẩu</a></button>
+                            <p>bạn chưa có tài khoản? <button><a  href="dangKi.php">Đăng kí ngay</a></button></p>
+                       
+                        <div >
+                          <button>  <a  href="./change_Password.php">Đổi mật khẩu </a></button>
                         </div>
-                        <div class="text-center">
-                            <a class="text-[#37A9CD]" href="./change_Password.php">đổi mật kh</a></p>
                         </div>
                     </form>
                 
@@ -105,10 +149,18 @@
             </div>
         </div>
         <script src="vadiform_DK.js"></script>
-        <?php 
-            require "foodter.php";
-            echo foodterRender();
-        ?> 
+        <div class="footer mr">
+  <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
+    <div class="menu2">
+        <ul class="">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About us </a></li>
+            <li><a href="">Contract us </a></li>
+
+        </ul>
+    </div>
+</div>  
     </body>
 
     </html>

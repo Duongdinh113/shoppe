@@ -66,7 +66,7 @@
         <?php foreach($categoryidList as $item):?>
             <div>
                  <h1 class="">
-                    <a href="./sanpham.php?id=<?php echo $item["id"]?>"><?php echo $item["name"]?></a>
+                    <a href="./sanpham.php?id=<?= $item["id"]?>"><?= $item["name"]?></a>
                 </h1>
             </div>
         <?php endforeach?>
@@ -80,10 +80,10 @@
             <div class="grid grid-cols-3 gap-5">
                 <?php foreach($productList as $item1):?>
                 <div class="">
-                <a href="./chiTietSanPham.php?id=<?php echo $item1["id"]?>"><img src="<?php echo "../image/".$item1["image"]?>" alt=""> </a>
-                    <h3><?php echo $item1["name"]?></h3>
-                    <h3><?php echo $item1["descrtiption"]?></h3>
-                    <h3 class="text-[red]"><?php echo $item1["price"]."$"?></h3>
+                <a href="./chiTietSanPham.php?id=<?= $item1["id"]?>"><img src="<?= "../image/".$item1["image"]?>" alt=""> </a>
+                    <h3><?= $item1["name"]?></h3>
+                    <h3><?= $item1["descrtiption"]?></h3>
+                    <h3 class="text-[red]"><?= $item1["price"]."$"?></h3>
                 </div>
                 <?php endforeach?>
             </div>

@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>GIẢM GIÁ</title>
 </head>
+<style>
+    .del{
+       display:flex;
+       height: 400px;
+    }
+</style>
 <body>
     <?php 
     session_start();
@@ -39,14 +45,14 @@
         <div class="max-w-[800px]">
             <div class="grid grid-cols-3 gap-5 w-[800px]">
                 <?php foreach($productList as $item1):?>
-                <div>   
+                <div class="dell">   
                     
                    
-                    <img src="<?php echo "../image/".$item1["image"]?>" alt="">
-                    <h3><?php echo $item1["name"]?></h3>
-                    <h3><?php echo $item1["descrtiption"]?></h3>
-                    <del><?php echo $item1["price"]."$"?></del>
-                    <h3 class=""><?php echo $item1["deal"]."$"?></h3>
+                    <img style="width:400px;height:300px; border:1px solid #cdcd"  src="<?= "../image/".$item1["image"]?>" alt="">
+                    <h3><?= $item1["name"]?></h3>
+                    <h3><?= $item1["descrtiption"]?></h3>
+                    <del><?= $item1["price"]."$"?></del>
+                    <h3 class=""><?= $item1["deal"]."$"?></h3>
                     
                 </div>
                 <?php endforeach?>
