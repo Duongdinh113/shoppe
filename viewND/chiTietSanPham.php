@@ -126,6 +126,7 @@ session_start();
         </form>
         
             <?php 
+       
     }else{
        echo " <button   ><a href='../viewND/dangNhap.php?'>đăng nhập để bình luận</a></button>";
     }
