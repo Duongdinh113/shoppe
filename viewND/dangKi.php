@@ -19,6 +19,7 @@
                         <h1><img src="image/logo.png" alt=""></h1>
                     </div>
 
+<<<<<<< HEAD
                     <div class="menu2">
                         <ul class="">
                             <li><a href="index.php">Trang Chủ</a></li>
@@ -83,6 +84,15 @@
                   <div class="mr1">
                   <label for="">Nhập lại mật khẩu</label> <br>
                     <input  type="password" minlength="6"  required="" placeholder="nhập lại mật khẩu" name="retype-password" id="retype-password"> 
+=======
+                    <label for="">Email</label> <br>
+                    
+                    <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="email" placeholder="tiennh21@gmail.com" name="email" id="email" required=""  > <br>
+                   <label for="">Image</label>
+                    <input type="file" name="avatar"> <br>
+                    <label for="">Mật Khẩu</label> <br>
+                    <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="password" minlength="6" required="" placeholder="*********" name="password" id="password"> <br>
+>>>>>>> 74b37fbb3ea70f3eb27d8c9f8a30fc73a5e7219c
                     
                   </div>
                    <div class="mr1" id="ShowErr"> 

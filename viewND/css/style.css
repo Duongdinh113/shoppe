@@ -156,3 +156,54 @@ margin-left: 10%;
     border: 1px solid #cdcd;
     border-radius: 3px;
 }
+ .dangnhap .dangnhap1 button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    background: rgb(185, 110, 31);
+}
+.dangnhap2{
+    border-radius: 5px;
+    height: 60px;
+    width: 300px;
+    border: 1px solid #cdcd;
+}
+ .dangnhap .dangnhap2 button{
+    width: 300px;
+    height: 30px;
+    border: none;
+background: #fff;
+}
+.dangnhap2 button img{
+    width: 100px;
+    height: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.dangnhap3 button{
+    width: 150px;
+    border: none;
+    border-radius: 2px;
+    height: 30px;
+    background: rgb(16, 150, 79);
+}
+.dangnhap3 a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+.dangnhap3 button:hover{
+    width: 200px;
+    border: none;
+    border-radius: 2px;
+    height: 39px;
+    background: rgb(32, 6, 103);
+}
+.dangnhap3 p{
+    font-size: 20px;
+   font-weight: 800;
+}

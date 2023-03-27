@@ -8,6 +8,16 @@
     <title>CHI TIẾT SẢN PHẨM </title>
 </head>
 <body>
+<div class="">
+            <img src="image/logo.png" alt="">
+            <ul class="flex gap-3">
+                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="index.php">Trang Chủ</a></li>
+                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="sanpham.php">Sản Phẩm</a></li>
+                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="giam_gia.php">Hàng giảm giá</a></li>
+                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="">Liên Hệ</a></li>
+                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="./giohang.php">giỏ hàng</a></li>
+            </ul>
+        </div>
     
     <div class="">
     <?php
@@ -19,10 +29,6 @@
         $comments = "SELECT * FROM comment WHERE idp = $id";
         $comment = getAll($comments);
     //    giỏ hàng
-
-
-        
-
     ?>
     <?php
      if(empty($_SESSION["email"])){
@@ -39,7 +45,10 @@
     
     }
     ?>
+   
+    </div>
     <?php foreach($product as $details):?>
+<<<<<<< HEAD
         <img src="<?= "../image/".$details["image"]?>" alt="">
         <h2><?= $details["descrtiption"]?></h2>
         
@@ -53,8 +62,11 @@
         <a class="border-[2px] bg-[blue] text-[white] font-bold" href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
     </form>
          
+=======
+        <img src="<?php echo "../image/".$details["image"]?>" alt="">
+        <h2><?php echo $details["descrtiption"]?></h2>  
+>>>>>>> 74b37fbb3ea70f3eb27d8c9f8a30fc73a5e7219c
     <?php endforeach?>
-    </div>
     <hr class="my-[20px]">
     <?php foreach($comment as $bl):?>
         <div class="my-[20px]">
@@ -64,16 +76,27 @@
         </div>
     <?php endforeach?>
     <hr class="my-[20px]">
+  
     <?php 
         if(isset($_SESSION["id"])&&($_SESSION["id"]) > 0){
             
          $id_p = $_GET["id"];
          $id_user = $_SESSION["id"];
- 
+
          $a = "SELECT * FROM products WHERE id = $id_p";
          $p = getOne($a);
         
     ?>
+    
+    <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
+        <input type="text" hidden value="<?php echo $id_p?>" name="id_p" id="">
+        <input type="text" hidden value="<?php echo $id_user?>" name="id_user" id="">
+        <input type="text" hidden value="<?php echo $p['name']?>" name="name" id="">
+        <input type="number" min="1" value="1" name="sl" id="">
+        <input type="text" hidden value="<?php echo $p['image']?>" name="image" id="">
+        <input type="text" hidden value="<?php echo $p['price']?>" name="price" id=""> <br>
+        <a class="border-[2px] bg-[blue] text-[white] font-bold" href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
+    </form>
     <form action="../control/comment.php" method="POST">
     <div class="grid">
         <input type="text" hidden value="<?= $id?>" name="id_p" id="">
