@@ -4,39 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>SẢN PHẨM</title>
 </head>
 <body>
-<div class="flex gap-10 items-center">
-            <img src="image/logo.png" alt="">
-
-            <ul class="flex gap-3">
-                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="index.php">Trang Chủ</a></li>
-                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="sanpham.php">Sản Phẩm</a></li>
-                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="giam_gia.php">Hàng giảm giá</a></li>
-                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="">Liên Hệ</a></li>
-                <li><a class="hover:text-[orange] font-bold text-[20px] text-[gray] active:bg-[orange]" href="./giohang.php"><img class="w-[40px] h-[50px]" src="../image/images.png" alt=""></a></li>
-            </ul>
-           
-        </div>
-    <?php 
+<div class="container">
+    <?php
     session_start();
-     if(empty($_SESSION["email"])){
-        echo ' <div class="flex  gap-4 border-[1px]">
-        <a href="dangNhap.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng nhập</button></a>
-        <a href="dangKi.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng kí</button></a>
-        </div>';
-    }else{  
-       echo '<div class="text-center w-[216px]">
-       <a class="" href="../control/login_out.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng xuất</button></a>
-       <p class="text-[#0066B2] text-[17px]">'.$_SESSION["email"].'</p>
-       
-        </div>';
-    
-    }
     ?>
    
+       
+           
+                <div class="header">
+                    <div class="menu1">
+                        <h1><img src="image/logo.png" alt=""></h1>
+                    </div>
+
+                    <div class="menu2">
+                        <ul class="">
+                            <li><a href="index.php">Trang Chủ</a></li>
+                            <li><a href="sanpham.php">Sản Phẩm </a></li>
+                            <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                            <li><a href="">Liên Hệ </a></li>
+                            <li><a href="./giohang.php">Giỏ Hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <?php
+        if(empty($_SESSION["email"])){
+            echo ' <div >
+            <button > <a href="dangNhap.php">Đăng nhập</a></button>
+            <button >  <a href="dangKi.php">Đăng kí</a></button>
+            </div>';
+        }else{  
+           echo '<div class="text-center w-[216px]">
+           <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
+           <p >'.$_SESSION["email"].'</p>
+           
+            </div>';
+        }
+        ?>
+
+
+
+                    </div>
+               
+            </div>
+          
+
+        
+   
+   
+            <div  >
    
     <?php 
     require "../models/connect.php";
@@ -59,13 +78,13 @@
           
       ?>
 
-    <div class="flex justify-center">
-    <div class="w-[1000px] flex justify-between">
-        <div class="max-w-[250px]">
-            <div class="">
+    <div >
+    <div class="product">
+        <div >
+            <div class="sanpham" >
         <?php foreach($categoryidList as $item):?>
             <div>
-                 <h1 class="">
+                 <h1 >
                     <a href="./sanpham.php?id=<?= $item["id"]?>"><?= $item["name"]?></a>
                 </h1>
             </div>
@@ -76,15 +95,16 @@
        
        </div>
          </div>
-        <div class="max-w-[750px]">
-            <div class="grid grid-cols-3 gap-5">
+        <div class="box" >
+            <div class="sanpham2">
                 <?php foreach($productList as $item1):?>
-                <div class="">
+                <div class="sp-box">
                 <a href="./chiTietSanPham.php?id=<?= $item1["id"]?>"><img src="<?= "../image/".$item1["image"]?>" alt=""> </a>
                     <h3><?= $item1["name"]?></h3>
                     <h3><?= $item1["descrtiption"]?></h3>
                     <h3 class="text-[red]"><?= $item1["price"]."$"?></h3>
                 </div>
+                
                 <?php endforeach?>
             </div>
         </div>
