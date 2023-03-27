@@ -9,10 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <?php 
-        require "../../viewND/header.php";
-        echo headerRender();
-    ?>
+   
 <form action="../../control/control_add_new.php" method="POST" enctype="multipart/form-data" class="w-[500px] m-auto">
         <input type="text" name="product-name" placeholder="Product Name" class="w-full border mt-8">
         <textarea name="product-desc" id="" cols="30" rows="10" placeholder="Product Desc" class="w-full border mt-8"></textarea>
