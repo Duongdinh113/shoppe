@@ -16,8 +16,6 @@
 <body>
     <?php 
     session_start();
-        require "header.php";
-        echo headerRender();
     ?>
       <?php 
     
@@ -59,9 +57,6 @@
             </div>
         </div>
     </div>
-    <?php 
-    require "foodter.php";
-    echo foodterRender();
-    ?>
+   
 </body>
 </html>

@@ -48,25 +48,11 @@
    
     </div>
     <?php foreach($product as $details):?>
-<<<<<<< HEAD
+
         <img src="<?= "../image/".$details["image"]?>" alt="">
         <h2><?= $details["descrtiption"]?></h2>
-        
-        <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
-        <input type="text" hidden value="<?= $id_p?>" name="id_p" id="">
-        <input type="text" hidden value="<?= $id_user?>" name="id_user" id="">
-        <input type="text" hidden value="<?= $p['name']?>" name="name" id="">
-        <input type="number" min="1" value="1" name="sl" id="">
-        <input type="text" hidden value="<?= $p['image']?>" name="image" id="">
-        <input type="text" hidden value="<?= $p['price']?>" name="price" id=""> <br>
-        <a class="border-[2px] bg-[blue] text-[white] font-bold" href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
-    </form>
-         
-=======
-        <img src="<?php echo "../image/".$details["image"]?>" alt="">
-        <h2><?php echo $details["descrtiption"]?></h2>  
->>>>>>> 74b37fbb3ea70f3eb27d8c9f8a30fc73a5e7219c
     <?php endforeach?>
+    
     <hr class="my-[20px]">
     <?php foreach($comment as $bl):?>
         <div class="my-[20px]">
@@ -76,7 +62,7 @@
         </div>
     <?php endforeach?>
     <hr class="my-[20px]">
-  
+    
     <?php 
         if(isset($_SESSION["id"])&&($_SESSION["id"]) > 0){
             
@@ -87,7 +73,6 @@
          $p = getOne($a);
         
     ?>
-    
     <form action="../control/gioHang_control.php" method="POST" enctype="multipart/form-data">
         <input type="text" hidden value="<?php echo $id_p?>" name="id_p" id="">
         <input type="text" hidden value="<?php echo $id_user?>" name="id_user" id="">
@@ -97,6 +82,7 @@
         <input type="text" hidden value="<?php echo $p['price']?>" name="price" id=""> <br>
         <a class="border-[2px] bg-[blue] text-[white] font-bold" href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
     </form>
+    
     <form action="../control/comment.php" method="POST">
     <div class="grid">
         <input type="text" hidden value="<?= $id?>" name="id_p" id="">
@@ -112,5 +98,6 @@
        echo "<a href='../viewND/dangNhap.php?'>đăng nhập để bình luận</a>";
     }
     ?>
+    
 </body>
 </html>

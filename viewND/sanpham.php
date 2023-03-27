@@ -90,9 +90,6 @@
         </div>
     </div>
     </div>
-    <?php 
-    require "foodter.php";
-    echo foodterRender();
-    ?>
+   
 </body>
 </html>
