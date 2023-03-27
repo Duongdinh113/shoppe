@@ -117,8 +117,8 @@ session_start();
         <form action="../control/comment.php" method="POST">
             <div>
                 <input type="text" hidden value="<?= $id?>" name="id_p" id="">
-                <input type="text" hidden value="<?= $_SESSION[" email"]?>" name="name" id="">
-                <input type="text" hidden value="<?= $_SESSION[" id"]?>" name="id_u" id="">
+                <input type="text" hidden value="<?= $_SESSION["email"]?>" name="name" id="">
+                <input type="text" hidden value="<?= $_SESSION["id"]?>" name="id_u" id="">
 
                 <textarea name="comment" id="" cols="30" rows="10" placeholder="sản phẩm tốt"></textarea>
                 <button>Bình Luận</button>

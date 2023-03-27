@@ -14,10 +14,7 @@
     <div class="container">
     <?php
     session_start();
-    ?>
-   
-       
-           
+    ?>   
                 <div class="header">
                     <div class="menu1">
                         <h1><img src="image/logo.png" alt=""></h1>
