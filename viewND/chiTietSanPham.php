@@ -127,7 +127,7 @@ session_start();
         
             <?php 
     }else{
-       echo " <button style="width: 100px;height: 40px;" ><a href='../viewND/dangNhap.php?'>đăng nhập để bình luận</a></button>";
+       echo " <button   ><a href='../viewND/dangNhap.php?'>đăng nhập để bình luận</a></button>";
     }
     ?>
        
