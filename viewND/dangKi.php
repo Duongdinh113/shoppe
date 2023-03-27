@@ -36,7 +36,7 @@
             <button >  <a href="dangKi.php">Đăng kí</a></button>
             </div>';
         }else{  
-           echo '<div class="text-center w-[216px]">
+           echo '<div >
            <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
            <p >'.$_SESSION["email"].'</p>
            
@@ -85,12 +85,13 @@
                     <input  type="password" minlength="6"  required="" placeholder="nhập lại mật khẩu" name="retype-password" id="retype-password"> 
                     
                   </div>
-                    <div class="mr1" id="ShowErr"></div>
-                    <button type="submit" name="register" id="register" >Đăng ký </button>
+                   <div class="mr1" id="ShowErr"> 
+                    <button  type="submit" name="register" id="register" >Đăng ký </button>
+                    </div>
                 </form>
             </div>
         </div>
-</div>
+</div></div>
 <div class="footer mr">
   <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
     <div class="menu2">
