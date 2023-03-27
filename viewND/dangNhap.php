@@ -11,6 +11,7 @@
 
 
     <body >
+        <div class="container">
     <div class="header">
                     <div class="menu1">
                         <h1><img src="image/logo.png" alt=""></h1>
@@ -106,8 +107,8 @@
         </p>
         <div >
             <div class="footer" >
-                <div >
-                    <img  src="image/item9.png" alt="">
+                <div class="anh2" >
+                    <img  src="image/dangnhap.jpg" alt="">
                 </div>
                 <div >
                     <div >
@@ -130,8 +131,10 @@
                             
                           <div class="dangnhap2 mr1">
                             <button    type="submit" class="btn btn-primary">
-                                <img src="image/iconfinder_Google_1298745 1.png" alt="">
-                                <p>Đăng nhập với tài khoản Google</p> 
+                            
+                            <img src="image/icongg.png" alt=""> <br>
+                                <span>Đăng nhập với tài khoản Google</span> 
+                               
                             </button>
                             </div>
                         </div>

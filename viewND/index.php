@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="container">
     <?php
     session_start();
     ?>
@@ -118,7 +119,7 @@
     </div>
 </div>
             </div>
-</div>
+
 <div class="footer mr">
   <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
     <div class="menu2">
@@ -131,7 +132,8 @@
         </ul>
     </div>
 </div>   
-  
+</div>
+</div>
 </body>
 
 </html>

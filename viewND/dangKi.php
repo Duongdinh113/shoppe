@@ -11,6 +11,7 @@
 
 
 <body >
+    <div class="container">
 <div >
        
     
@@ -59,9 +60,9 @@
     </div>
    
     <div >
-        <div class="footer">
+        <div class="footer ">
             <div >
-                <img  src="image/item9.png" alt="">
+                <img  src="image/dangky.jpg" alt="">
             </div>
             <div class="formdk ">
                 <h2 >Đăng ký</h2>
@@ -82,14 +83,8 @@
                   <div class="mr1">
                   <label for="">Nhập lại mật khẩu</label> <br>
                     <input  type="password" minlength="6"  required="" placeholder="nhập lại mật khẩu" name="retype-password" id="retype-password"> <br>
-                    <label for="">Email</label> <br>
-                    <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="email" placeholder="tiennh21@gmail.com" name="email" id="email" required=""  > <br>
-                   <label for="">Image</label>
-                    <input type="file" name="avatar"> <br>
-                    <label for="">Mật Khẩu</label> <br>
-                    <input class="w-[360px] h-[40px]  pl-[5px] border-[orange] border-[1px] rounded" type="password" minlength="6" required="" placeholder="*********" name="password" id="password"> <br>
-
-                    
+                   
+                 
                   </div>
                    <div class="mr1" id="ShowErr"> 
                     <button  type="submit" name="register" id="register" >Đăng ký </button>
@@ -110,6 +105,7 @@
         </ul>
     </div>
 </div>  
+</div>
 </body>
 
 </html>
