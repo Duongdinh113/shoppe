@@ -9,6 +9,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
     <title>GIỎ HÀNG </title>
 </head>
 <style>
@@ -24,7 +25,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
     $pr = getAll($query);
     
     ?>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>stt</th>

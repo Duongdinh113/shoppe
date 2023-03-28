@@ -45,18 +45,17 @@
         }
         ?>
 
-
-
-                    </div>
                
-            </div>
-          
-
+                    </div>
         
+                    </div>
+                    </div>
+           
+            
    
-   
-            <div  >
-   
+ 
+  
+    
     <?php 
     require "../models/connect.php";
     
@@ -78,38 +77,46 @@
           
       ?>
 
-    <div >
-    <div class="product">
-        <div >
-            <div class="sanpham" >
+  
+        
+            <div class="sanpham mr" >
+                <div class="sanpham1">
+                    <div class="danhmuc">
+                        <h2>DANH MỤC SẢN PHẨM</h2></div>
         <?php foreach($categoryidList as $item):?>
-            <div>
+           
                  <h1 >
                     <a href="./sanpham.php?id=<?= $item["id"]?>"><?= $item["name"]?></a>
                 </h1>
-            </div>
+            <hr>
         <?php endforeach?>
         </div>
-       <div>
+        
+
         <!-- thêm giỏ hàng -->
        
-       </div>
-         </div>
-        <div >
+      
+       
+        
+    
+       
             <div class="sanpham2">
                 <?php foreach($productList as $item1):?>
                 <div class="sp-box">
-                <a href="./chiTietSanPham.php?id=<?= $item1["id"]?>"><img src="<?= "../image/".$item1["image"]?>" alt=""> </a>
+                 <a href="./chiTietSanPham.php?id=<?= $item1["id"]?>"><img src="<?= "../image/".$item1["image"]?>" alt=""> </a>
                     <h3><?= $item1["name"]?></h3>
-                    <h3><?= $item1["descrtiption"]?></h3>
-                    <h3 class="text-[red]"><?= $item1["price"]."$"?></h3>
+                    <p><?= $item1["descrtiption"]?></p>
+                   <div class="gia"> <span ><?= $item1["price"]."$"?></span> </div>
                 </div>
+                
+                
                 
                 <?php endforeach?>
             </div>
-        </div>
-    </div>
-    </div>
-   
+            </div>
+       </div>
+       </div>
+       </div> 
+        </div>   
 </body>
 </html>

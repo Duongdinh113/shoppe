@@ -81,9 +81,10 @@
                 <p >
                     <?= $productList[$i]["descrtiption"]?>
                 </p>
-                <span >
+             <div class="gia">   <span >
                     <?= $productList[$i]["price"]."$"?>
                 </span>
+            </div>
             </div>
             </div>
             <?php endfor?>
@@ -101,25 +102,30 @@
     <div class="tips">
         <div class="tips-box mr">
             <img src="image/item5.png" alt="">
+          <div class="tips-p">
             <p>How to create a living room to love</p>
             <p>20 jan 2020</p>
+            </div>
         </div>
         <div class="tips-box mr">
             <img src="image/item6.png" alt="">
+          <div class="tips-p">
             <p>Solution for clean look working space
             </p>
             <p>10 jan 2020</p>
+            </div>
         </div >
         <div class="tips-box mr">
             <img src="image/item7.png" alt="">
+          <div class="tips-p">
             <p class="font-bold">Make your cooking activity more fun with good setup</p>
             <p>20 jan 2020</p>
+            </div>
         </div>
     </div>
-</div>
-            </div>
+    </div>
 
-<div class="footer mr">
+    <div class="footer mr">
   <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
     <div class="menu2">
         <ul class="">
@@ -130,9 +136,10 @@
 
         </ul>
     </div>
+  
 </div>   
-</div>
-</div>
+
+
 </body>
 
 </html>
