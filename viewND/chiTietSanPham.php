@@ -56,7 +56,8 @@ session_start();
             </div>
 
         </div>
-        <div>
+        <div class="spct mr">
+       <h3> CHI TIẾT SẢN PHẨM</h3>
             <?php
     
         require "../models/connect.php";
@@ -69,7 +70,7 @@ session_start();
     ?>
 
 
-        </div>
+       
         <?php foreach($product as $details):?>
 
         <img src="<?= " ../image/".$details["image"]?>" alt="">
@@ -81,9 +82,9 @@ session_start();
 
         <?php foreach($comment as $bl):?>
         <div>
-            <h2>
+            <h3>
                 <?= $bl["name"]?>
-            </h2>
+            </h3>
             <h2>
                 <?= $bl["date"]?>
             </h2>
@@ -131,7 +132,7 @@ session_start();
        echo " <button   ><a href='../viewND/dangNhap.php?'>đăng nhập để bình luận</a></button>";
     }
     ?>
-       
+       </div>
     </div>
 
 </body>
