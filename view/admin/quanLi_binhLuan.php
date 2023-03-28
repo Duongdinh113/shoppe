@@ -47,7 +47,7 @@
             </div>
             <div>
                 <div class="max-w-[1000px]">
-                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí user</p>
+                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí bình luận</p>
                     <img class="max-w-full" src="../../viewND/image/Rectangle 152.png" alt="">
                 </div>
                 <div class="">
@@ -83,13 +83,8 @@
                require "../../models/connect.php";
             //    $query = "SELECT * FROM products"; 
             //    $productList = getAll($query);
-
-               if(empty($_POST["search"])){
-                $user = "SELECT * FROM users";
-            }else{
-                $search = $_POST["search"];
-                $user = "SELECT * FROM users WHERE fullname LIKE '$search'";
-            }
+                $user = "SELECT * FROM comment";
+            
             $productList = getAll($user);               
                
             ?>
@@ -101,23 +96,14 @@
                         <?php echo $product["id"]?>
                     </td>
                     <td>
-                        <?php echo $product["fullname"]?>
+                        <?php echo $product["name"]?>
                     </td>
                     <td>
                         <?php echo $product["email"]?>
                     </td>
-                    <td><img class="w-[50px]" src="<?php echo "../../image/".$product["image"]?>" alt=""></td>
-                    <td>
-                        <?php echo $product["password"]?>
-                    </td>
-                    <td>
-                        <?php 
-                            $class = $product["role"];
-                            $query = "SELECT * FROM vaitro WHERE id = $class";
-                            $vaiTro = getOne($query);
-                        ?>
-                        <?php echo $vaiTro["user"]?>
-                    </td>
+                  
+                    
+                    
                     <td class="text-center">
                         <a href="../../control/control_deleteUser.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa user</button></a>
                     </td>
