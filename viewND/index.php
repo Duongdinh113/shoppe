@@ -72,9 +72,10 @@
     <div  >
         <div class="product mr" >
             <?php  for($i = 0; $i < 4; $i++):?>
-            <div >
+            <div class="trangchu">
                <div class="div"> <img  src="<?= " ../image/".$productList[$i]["image"]?>"> </div>
-                <h3>
+               <div class="boxs">
+               <h3>
                     <?= $productList[$i]["name"]?>
                 </h3>
                 <p >
@@ -83,6 +84,7 @@
                 <span >
                     <?= $productList[$i]["price"]."$"?>
                 </span>
+            </div>
             </div>
             <?php endfor?>
 
@@ -97,18 +99,18 @@
 
 
     <div class="tips">
-        <div class="tips-box">
+        <div class="tips-box mr">
             <img src="image/item5.png" alt="">
             <p>How to create a living room to love</p>
             <p>20 jan 2020</p>
         </div>
-        <div class="tips-box">
+        <div class="tips-box mr">
             <img src="image/item6.png" alt="">
             <p>Solution for clean look working space
             </p>
             <p>10 jan 2020</p>
         </div >
-        <div class="tips-box">
+        <div class="tips-box mr">
             <img src="image/item7.png" alt="">
             <p class="font-bold">Make your cooking activity more fun with good setup</p>
             <p>20 jan 2020</p>
