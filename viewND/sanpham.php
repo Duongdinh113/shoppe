@@ -95,7 +95,7 @@
        
        </div>
          </div>
-        <div class="box" >
+        <div >
             <div class="sanpham2">
                 <?php foreach($productList as $item1):?>
                 <div class="sp-box">
