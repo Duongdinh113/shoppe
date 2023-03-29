@@ -81,11 +81,24 @@
                 <p >
                     <?= $productList[$i]["descrtiption"]?>
                 </p>
-             <div class="gia">   <span >
+                
+                   
+                <div class="gia">   <span >
                     <?= $productList[$i]["price"]."$"?>
                 </span>
+         
+               </div>
+               <div class="btngh mr1">
+                    <button>
+                        <a href="">Thêm vào giỏ hàng</a>
+                    </button>
+                   </div>
+               <div class="dathang mr">
+                <button >
+                    <a href="">Đặt Hàng</a>
+                </button>
             </div>
-            </div>
+             </div>
             </div>
             <?php endfor?>
 

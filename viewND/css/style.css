@@ -94,7 +94,7 @@
 }
 
 .trangchu {
-    height: 450px;
+    height: 550px;
     border-radius: 5px;
     border: 1px solid #360cdc;
 }
@@ -130,14 +130,17 @@
     margin-left: 3%;
 
 }
-.gia{
+
+.gia {
     border-radius: 5px;
     background: #be280d;
-    height: 30px;
+    height: 35px;
     float: right;
     width: 60px;
     margin-right: 5px;
+    margin-top: 10px;
 }
+
 .boxs span,
 .sp-box span {
     font-size: 23px;
@@ -161,7 +164,7 @@
 /* sản phẩm */
 .sanpham1 {
     width: 350px;
-height: 224px;
+    height: 224px;
     border-radius: 5px;
     margin-top: 5%;
     margin-left: 3%;
@@ -362,6 +365,16 @@ height: 224px;
 
 
 }
+.sp-box .btngh button{
+
+margin:10px;
+}
+.sp-box .dathang button{
+   height: 30px;
+   width: 100px;
+   
+    }
+
 
 .sp-box img {
     margin: 33px;
@@ -369,7 +382,7 @@ height: 224px;
 }
 
 .sp-box {
-    height: 440px;
+    height: 550px;
     width: 300px;
     border: 1px solid rgb(55, 28, 108);
     margin-top: 20%;
@@ -406,23 +419,65 @@ height: 224px;
 
 /* chi tiết sản phẩm  */
 
-.spct{
+.spct {
     height: 700px;
     width: 500px;
-margin: 10px auto;
- 
+    margin: 10px auto;
+
 }
-.spct img{
+
+.spct img {
     width: 500px;
 }
-.spct h2{
+
+.spct h2 {
     font-weight: 100;
 }
+
 /*  giỏ hàng  */
-.table{
-    margin:20px auto ;
+.table {
+    margin: 20px auto;
 }
-    .table, th, td {  
-        border: 1px solid rgb(33, 32, 32);  
-        border-collapse: collapse;  
-    } 
+
+.table,
+th,
+td {
+    border: 1px solid rgb(33, 32, 32);
+    border-collapse: collapse;
+}
+.trangchu .dathang button{
+    width: 100px;
+    height: 30px;
+}
+.dathang a,
+.btngh a{
+    text-decoration: none;
+    font-size: 18px;
+    color: antiquewhite;
+}
+.dathang button:hover,
+.btngh button:hover{
+    background-color: aquamarine;
+}
+.dathang a:hover,
+.btngh a:hover{
+   color: black;
+}
+.btngh button{
+    margin: 10px 0px;
+    width: 200px;
+    height: 35px;
+    background-color:red;
+    border: none;
+    border-radius: 5px;
+
+}
+.dathang button{
+                
+    height: 20px;
+    margin: 2% 25%;
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+
+}
