@@ -107,6 +107,16 @@
                     <h3><?= $item1["name"]?></h3>
                     <p><?= $item1["descrtiption"]?></p>
                    <div class="gia"> <span ><?= $item1["price"]."$"?></span> </div>
+                   <div class="btngh mr1">
+                    <button>
+                        <a href="">Thêm vào giỏ hàng</a>
+                    </button>
+                   </div>
+                   <div class="dathang mr">
+                <button >
+                    <a href="">Đặt Hàng</a>
+                </button>
+            </div>
                 </div>
                 
                 
