@@ -114,9 +114,9 @@
                     <td>
                         <?php
                             $cateId = $product["class"];
-                            $query ="SELECT * FROM categoryid WHERE id=$cateId";
+                            $query ="SELECT * FROM categoryid WHERE iddm=$cateId";
                             $category = getOne($query);
-                            echo $category["name"];
+                            echo $category["namee"];
                         ?>
                     </td>
                     <td class="text-center">

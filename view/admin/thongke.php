@@ -1,12 +1,4 @@
-<?php
-   require "../../models/connect.php";
 
-            
-       $sql=" SELECT iddm as maxdm, namee as tendm, MAX(price) as maxprice, MIN(price) as minprice, AVG(price) as avgprice FROM products left join categoryid on products.class=categoryid.iddm order by products.class desc";
-    
-       $listtk=getAll($sql);
-     
-            ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +78,15 @@
         </thead>
     
         <tbody>
-      
+      <?php
+   require "../../models/connect.php";
+
+            
+       $sql=" SELECT categoryid.iddm as maxdm, categoryid.namee as tendm, MAX(products.price) as maxprice, MIN(products.price) as minprice, AVG(products.price) as avgprice FROM  categoryid JOIN products ON categoryid.iddm=products.class GROUP BY categoryid.iddm ";
+   
+       $listtk=getAll($sql);
+     
+            ?>
             
                 <?php foreach( $listtk as $tk):?>
                 <tr>
@@ -110,7 +110,7 @@
                     <?php echo $tk ["avgprice"]?>
                     </td>
                 </tr>
-                <?php endforeach?>
+                <?php endforeach ?>
                 
         </tbody>
                 </table>

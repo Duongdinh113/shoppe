@@ -93,13 +93,13 @@
                 <tr>
                    
                     <td class="text-center">
-                        <?php echo $product["id"]?>
+                        <?php echo $product["iddm"]?>
                     </td>
                     <td>
-                        <?php echo $product["name"]?>
+                        <?php echo $product["namee"]?>
                   
                     <td class="text-center">
-                        <a href="../../control/control_xoa-loai.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa loại</button></a>
+                        <a href="../../control/control_xoa-loai.php?id=<?php echo $product["iddm"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa loại</button></a>
                     </td>
                 </tr>
                 <?php endforeach?>
