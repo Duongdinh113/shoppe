@@ -70,6 +70,7 @@
             <tr class="bg-[black] h-[50px]">
                 <th class="text-[white]">Mã Danh Mục</th>
                 <th class="text-[white]">Tên Danh Mục</th>
+                <th class="text-[white]">Số Lượng </th>
                 <th class="text-[white]">Giá Cao Nhất</th>
                 <th class="text-[white]">Giá Thấp Nhất</th>
                 <th class="text-[white]">Giá Trung Bình</th>
@@ -82,7 +83,7 @@
    require "../../models/connect.php";
 
             
-       $sql=" SELECT categoryid.iddm as maxdm, categoryid.namee as tendm, MAX(products.price) as maxprice, MIN(products.price) as minprice, AVG(products.price) as avgprice FROM  categoryid JOIN products ON categoryid.iddm=products.class GROUP BY categoryid.iddm ";
+       $sql=" SELECT categoryid.iddm as maxdm, categoryid.namee as tendm, count(products.id) as countsp, MAX(products.price) as maxprice, MIN(products.price) as minprice, AVG(products.price) as avgprice FROM  categoryid JOIN products ON categoryid.iddm=products.class GROUP BY categoryid.iddm ";
    
        $listtk=getAll($sql);
      
@@ -97,6 +98,9 @@
 
                     <td>
                     <?php echo $tk ["tendm"]?>
+                    </td>
+                    <td>
+                    <?php echo $tk ["countsp"]?>
                     </td>
                     <td>
                     <?php echo $tk ["maxprice"]?>
@@ -116,8 +120,38 @@
                 </table>
                 </div>
             </div>
+            
         </div>
+        <div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Loại sản phẩm');
+    data.addColumn('number', 'Số sản phẩm');
+
+    // Add rows to the data table using a loop
+    <?php foreach ($listtk as $tk): ?>
+      data.addRow(["<?php echo $tk["tendm"] ?>", <?php echo $tk["countsp"] ?>]);
+    <?php endforeach ?>
+
+    // Set chart options
+    var options = {
+      title: "Thống kê số sản phẩm theo loại",
+      pieHole: 1
+    };
+
+    // Instantiate and draw the chart
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
+</script>
     </div>
+    
     
 </body>
 
