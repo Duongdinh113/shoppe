@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="css/style.css">
+       <script src="https://cdn.tailwindcss.com"></script>
         <title>ĐĂNG NHẬP</title>
     </head>
-
 
     <body >
         <div class="container">
@@ -41,15 +41,9 @@
             </div>';
         }
         ?>
-
-
-
                     </div>
                
-           
             <div>
-
-        
     
             </div>
           
@@ -58,7 +52,6 @@
     </div>
    
     <div >
-        <p >
         <?php 
             session_start();
             /*
@@ -105,52 +98,52 @@
 
         ?>
         </p>
-        <div >
-            <div class="footer" >
-                <div class="anh2" >
-                    <img  src="image/dangnhap.jpg" alt="">
-                </div>
-                <div >
-                    <div >
-                       <h2 style="text-align:center">ĐĂNG NHẬP</h2>
-                    </div>
-                    <form class="formdk"  action="./dangNhap.php" method="POST">
-                        <div class="mr1">
-                            <label for="exampleInputEmail1" >Email</label><br>
-                            
-                            <input   placeholder="dinhdvph29050@gamil.com" name="email" required="">
-                        
-                        </div>
-                        <div   class="mr1">
-                            <label for="exampleInputPassword1" >Mật khẩu<br>
-                            <input  required=""  type="password" name="pass">
-                        </div>
-                       
-                        <div class="dangnhap" >
-                            <div class="dangnhap1 mr1"><button    type="submit" name="btn">Đăng nhập ngay</button></div>
-                            
-                          <div class="dangnhap2 mr1">
-                            <button    type="submit" class="btn btn-primary">
-                            
-                            <img src="image/icongg.png" alt=""> <br>
-                                <span>Đăng nhập với tài khoản Google</span> 
-                               
-                            </button>
-                            </div>
-                        </div>
-                        <div class="dangnhap3 mr">
-                           <button> <a  href="">Quên mật khẩu</a></button>
-                            <p>bạn chưa có tài khoản? <button><a  href="dangKi.php">Đăng kí ngay</a></button></p>
-                       
-                        <div >
-                          <button>  <a  href="./change_Password.php">Đổi mật khẩu </a></button>
-                        </div>
-                        </div>
-                    </form>
-                
-                </div>
+      
+        <div class="lg:flex lg:justify-center lg:items-center lg:mt-32">
+            <div class="mr-[84px]">
+                <a href=""><img class="object-cover h-[560px] rounded-xl"
+                        src="https://i.pinimg.com/564x/57/8c/a8/578ca81049c051d5a1fbb752f3d7f2f0.jpg" alt=""></a>
             </div>
+            <form action="./dangNhap.php" method="POST">
+                <div class="mt-6 ml-12 ">
+                    <h1 class="font-bold text-3xl text-[#37A9CD] text-center">Đăng nhập</h1>
+                    <div class="mt-5">
+                        <p class="text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Email</p>
+                        <input name="email" type="text" required=""
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 "
+                            placeholder="irenesm@gmail.com.vn">
+                       
+                    </div>
+                    <div class="mt-6">
+                        <p class="mt-3 text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Mật Khẩu
+                        </p>
+                        <input name="pass" type="password" required=""
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 " placeholder="*********">
+        
+                    </div>
+                    <div>
+                        <button name="btn" type="submit"
+                            class="mt-8 text-[#FFFFFF] bg-[#37A9CD] text-sm font-bold w-[300px] h-[40px] text-center rounded ">Đăng
+                            nhập ngay</button>
+                    </div>
+                    <div class="mt-9 text-center mr-16 lg:mr-0">
+                        <a href="">
+                            <a class="font-normal text-sm text-[#37A9CD] cursor-pointer">Quên mật khẩu</a>
+                        </a>
+                        <div class="flex mt-2 justify-center items-center">
+                            <a href=".change_Password.php">
+                                <h6 class="text-[#616161] font-normal text-sm">Đổi mật khẩu?</h6>
+                            </a>
+                            <a href="./dangKi.php">
+                                <p class="text-[#37A9CD] font-normal text-sm pl-1">Đăng kí ngay</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
         </div>
+        
         <script src="vadiform_DK.js"></script>
         <div class="footer mr">
   <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
