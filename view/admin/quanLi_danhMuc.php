@@ -47,7 +47,7 @@
             </div>
             <div>
                 <div class="max-w-[1000px]">
-                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí bình luận</p>
+                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí loại</p>
                     <img class="max-w-full" src="../../viewND/image/Rectangle 152.png" alt="">
                 </div>
                 <div class="">
@@ -69,9 +69,7 @@
         <thead>
             <tr class="bg-[black] h-[50px]">
                 <th class="text-[white]">Id</th>
-                <th class="text-[white]">Email</th>
-                <th class="text-[white]">comment</th>
-                <th class="text-[white]">date</th>
+                <th class="text-[white]">Loại</th>
                
             </tr>
         </thead>
@@ -81,8 +79,13 @@
                require "../../models/connect.php";
             //    $query = "SELECT * FROM products"; 
             //    $productList = getAll($query);
-                $user = "SELECT * FROM comment";
-            
+
+               if(empty($_POST["search"])){
+                $user = "SELECT * FROM categoryid";
+            }else{
+                $search = $_POST["search"];
+                $user = "SELECT * FROM categoryid WHERE name LIKE '$search'";
+            }
             $productList = getAll($user);               
                
             ?>
@@ -95,18 +98,14 @@
                     </td>
                     <td>
                         <?php echo $product["name"]?>
-                    </td>
-                    <td>
-                        <?php echo $product["comment"]?>
-                    </td>
-                    <td>
-                        <?php echo $product["date"]?>
-                    </td>
+                  
                     <td class="text-center">
-                        <a href="../../control/control_deleteUser.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa bình luận</button></a>
+                        <a href="../../control/control_xoa-loai.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa loại</button></a>
                     </td>
                 </tr>
                 <?php endforeach?>
+                
+                <a href="./them_loai.php"><button class="border-[1px] w-[200px] h-[30px] rounded-[10px] bg-[#38A169] text-[white] font-bold">add new</button></a>
                 
         </tbody>
                 </table>
