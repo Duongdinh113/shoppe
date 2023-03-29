@@ -69,12 +69,10 @@
         <thead>
             <tr class="bg-[black] h-[50px]">
                 <th class="text-[white]">Id</th>
-                <th class="text-[white]">Product Name</th>
-                <th class="text-[white]">Product Desc</th>
-                <th class="text-[white]">Product Image</th>
-                <th class="text-[white]">password</th>
-                <th class="text-[white]">Vai trò</th>
-                <th class="text-[white]">Action</th>
+                <th class="text-[white]">Email</th>
+                <th class="text-[white]">comment</th>
+                <th class="text-[white]">date</th>
+               
             </tr>
         </thead>
     
@@ -99,13 +97,13 @@
                         <?php echo $product["name"]?>
                     </td>
                     <td>
-                        <?php echo $product["email"]?>
+                        <?php echo $product["comment"]?>
                     </td>
-                  
-                    
-                    
+                    <td>
+                        <?php echo $product["date"]?>
+                    </td>
                     <td class="text-center">
-                        <a href="../../control/control_deleteUser.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa user</button></a>
+                        <a href="../../control/control_deleteUser.php?id=<?php echo $product["id"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa bình luận</button></a>
                     </td>
                 </tr>
                 <?php endforeach?>
