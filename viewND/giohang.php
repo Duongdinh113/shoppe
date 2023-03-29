@@ -72,6 +72,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
             </tr>
         </tbody>
     </table>
+    <a href=""><button>cập nhật</button></a>
 </body>
 </html>
 <?php }else{
