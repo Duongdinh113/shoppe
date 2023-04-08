@@ -25,7 +25,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
                     <li><a href="index.php">Trang Chủ</a></li>
                     <li><a href="sanpham.php">Sản Phẩm </a></li>
                     <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
-                    <li><a href="">Liên Hệ </a></li>
+                    <li><a href="lienhe.php">Liên Hệ </a></li>
                     <li><a href="./giohang.php">Giỏ Hàng</a></li>
                 </ul>
             </div>

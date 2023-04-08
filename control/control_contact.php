@@ -1,5 +1,5 @@
 <?php 
-    require 'connect.php';
+    require '../models/connect.php';
     $name = $_POST["name"];
     $sdt = $_POST["sdt"];
     $email = $_POST["email"];
