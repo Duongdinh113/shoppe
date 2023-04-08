@@ -10,17 +10,20 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-.container{
-    width: 600px;
-    margin: 0 auto;
-}
-h2{
-    text-align: center;
-}
-p{
-    width: 350px;
-    margin-left: 20%;
-}
+    .container {
+        width: 600px;
+        margin: 0 auto;
+        padding-top: 10%;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        width: 350px;
+        margin-left: 20%;
+    }
 </style>
 
 <body>
@@ -33,44 +36,58 @@ p{
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Họ và tên </label>
                 <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                    placeholder="nhập họ tên ">
+                    placeholder="nhập họ tên " required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nhập email">
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nhập email"
+                    required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Số điện thoại </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nhập số điện thoại">
-                <p class="errEmail" style="color:red ;"></p>
+                <label for="exampleFormControlInput1" class="form-label"> Nhập số điện thoại </label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="sdt">
+                <p class="errSDT" style="color:red ;"></p>
+
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Vấn đề </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="vấn đề ">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="vấn đề " required>
             </div>
             <button type="submit" class="btn btn-success">SEND</button>
 
 
-           
+
         </form>
         <script>
             function dk() {
+
                 var sdt = document.frmDK.sdt.value;
+
                 var errSDT = document.querySelector(".errSDT");
+
                 let flag = true;
                 if (sdt == "") {
-                    errSDT.innerHTML = "SDT không được rỗng";
+                    errSDT.innerHTML = "SDT không được rỗng"
                     flag = false;
                 }
                 else {
                     let regSDT = /^0\d{9}$/
                     if (!sdt.match(regSDT)) {
-                        errSDT.innerHTML = "SDT sai định dạng";
+                        errSDT.innerHTML = "SDT sai định dạng"
                         flag = false;
                     }
-                    else errSDT.innerHTML = "";
+                    else errSDT.innerHTML = ""
                 }
 
+
+
+                if (flag == true) {
+                    alert("đăng ký thành công");
+                    return true;
+                }
+                else {
+                    return false;
+                }
             }
         </script>
     </div>
