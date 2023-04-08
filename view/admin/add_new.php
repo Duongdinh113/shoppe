@@ -23,7 +23,7 @@
             $categoryList = getAll($query);           
             ?>
             <?php foreach($categoryList as $cate):?>
-                <option value="<?php echo $cate["id"]?>"><?php echo $cate["name"]?></option>
+                <option value="<?php echo $cate["iddm"]?>"><?php echo $cate["namee"]?></option>
             <?php endforeach?>
         </select>
         <button class="w-full bg-green-700 text-white mt-8">Add New</button>
