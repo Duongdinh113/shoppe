@@ -135,9 +135,9 @@
                             <p class="font-normal text-sm text-[#37A9CD] cursor-pointer">Quên mật khẩu</p>
                         </a>
                         <div class="flex mt-2 justify-center items-center">
-                            <a href="./change_Password.php">
+                            <!-- <a href="./change_Password.php">
                                 <h6 class="text-[#616161] font-normal text-sm">Đổi mật khẩu?</h6>
-                            </a>
+                            </a> -->
                             <a href="./dangKi.php">
                                 <p class="text-[#37A9CD] font-normal text-sm pl-1">Đăng kí ngay</p>
                             </a>
@@ -148,7 +148,7 @@
             </form>
         </div>
         <script src="vadiform_DK.js"></script>
-        <div class="footer mr">
+        <!-- <div class="footer mr"> -->
   <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
     <div class="menu2">
         <ul class="">

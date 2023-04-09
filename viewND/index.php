@@ -36,9 +36,10 @@
                     <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                     }else{  
-                    echo '<div class="text-center w-[216px]">
+                    echo '<div class="flex text-center w-[216px]">
                     <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >'.$_SESSION["email"].'</p>
+                     <p >'.$_SESSION["email"].'</p>
+                    <a  href="./change_Password.php"><button >Đổi mật khẩu</button></a>
                             
                     </div>';
                     }
