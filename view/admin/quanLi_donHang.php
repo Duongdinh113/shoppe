@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -43,12 +43,13 @@
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (3).png" alt=""><a href="quanLi_binhLuan.php">Quản lý bình luận</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (4).png" alt=""><a href="./quanLi_donHang.php">Quản lí đơn hàng</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (4).png" alt=""><a href="thongKe.php">Thống kê</a></li>
+                       
                     </ul>
                 </div>
             </div>
             <div>
                 <div class="max-w-[1000px]">
-                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí loại</p>
+                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí user</p>
                     <img class="max-w-full" src="../../viewND/image/Rectangle 152.png" alt="">
                 </div>
                 <div class="">
@@ -69,8 +70,11 @@
     <table class="w-[1000px] h-[200px]">
         <thead>
             <tr class="bg-[black] h-[50px]">
-                <th class="text-[white]">Id</th>
-                <th class="text-[white]">Loại</th>
+                <th class="text-[white]">id</th>
+                <th class="text-[white]">Product Name</th>
+                <th class="text-[white]">number</th>
+                <th class="text-[white]">total_price</th>
+               
                
             </tr>
         </thead>
@@ -81,32 +85,40 @@
             //    $query = "SELECT * FROM products"; 
             //    $productList = getAll($query);
 
-               if(empty($_POST["search"])){
-                $user = "SELECT * FROM categoryid";
-            }else{
-                $search = $_POST["search"];
-                $user = "SELECT * FROM categoryid WHERE name LIKE '$search'";
-            }
+                $user = "SELECT * FROM billdetail ";
+        
             $productList = getAll($user);               
-               
+            
+            
             ?>
             
                 <?php foreach($productList as $product):?>
                 <tr>
-                   
+                    
+                    
                     <td class="text-center">
-                        <?php echo $product["iddm"]?>
+                        <?php echo $product["id_bill"]?>
                     </td>
                     <td>
-                        <?php echo $product["namee"]?>
-                  
-                    <td class="text-center">
-                        <a href="../../control/control_xoa-loai.php?id=<?php echo $product["iddm"]?>"><button class="border-[1px] rounded w-[100px] bg-[#1E74A4] text-[white] ">xóa loại</button></a>
+                        
+                    <?php
+                     $id = $product['id_sp'];
+                    $ten_sp = "SELECT * FROM products WHERE id = $id";
+                    $ten_sps = getOne($ten_sp);
+                    ?> 
+                    <?php echo $ten_sps['name']?>
                     </td>
+                    <td>
+                        <?php echo $product["sl"]?>
+                    </td>
+                
+                    <td>
+                        <?php echo $product["total_price"]?>
+                    </td>
+                
+                  
                 </tr>
                 <?php endforeach?>
-                
-                <a href="./them_loai.php"><button class="border-[1px] w-[200px] h-[30px] rounded-[10px] bg-[#38A169] text-[white] font-bold">add new</button></a>
                 
         </tbody>
                 </table>
