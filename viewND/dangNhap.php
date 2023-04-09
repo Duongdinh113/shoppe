@@ -61,7 +61,7 @@
     <div >
         <div class="absolute right-[330px] top-[670px]">
             <?php 
-            session_start();
+            session_start(); // bật công tắc để các dữ liệu được liên kết với nhau 
             /*
                 session là một phiên làm việc giữa client và server 
                 Một session bắt đầu khi client gửi request đến server, 
@@ -72,18 +72,15 @@
             */
             require "../models/connect.php";
 
-            $query = "SELECT * FROM users";
-            $use = getAll($query);
+            $query = "SELECT * FROM users"; //câu lệnh lấy toàn bộ dữ liệu từ bảng users trong DB
+            $use = getAll($query); //thực hiện lấy dữ liệu và gán cho biến $use
         
             $check = 0;
-        //    var_dump($_POST);
-            foreach($use as $suv){
-                if(isset($_POST["btn"])){
-                    if(!$_POST["email"] == "" && !$_POST["pass"] == ""){
-                        // var_dump($suv["Email"]);die;
-
-                        if($_POST["email"] == $suv["email"] && $_POST["pass"] == $suv["password"]){
-                            $_SESSION["email"] = $_POST["email"];
+            foreach($use as $suv){ //lặp để kiểm tra dữ liệu nhập vào form và dữ liệu trong DB
+                if(isset($_POST["btn"])){ //kiểm tra xem button login đã được ấn hay chưa
+                    if(!$_POST["email"] == "" && !$_POST["pass"] == ""){ // kiểm tra xem email và password có trống hay không
+                        if($_POST["email"] == $suv["email"] && $_POST["pass"] == $suv["password"]){ //kiểm tra xem email và password nhập vào có trùng trong db k
+                            $_SESSION["email"] = $_POST["email"]; // nếu khớp dữ liệu trong db thì gán dữ liệu email vào session thông qua key là email
                             if($suv["role"]=="1"){
                                 $_SESSION["user"]= $suv["user"];
                                 $_SESSION["id"]=$suv["id"];
@@ -109,7 +106,7 @@
         <div class="lg:flex lg:justify-center lg:items-center lg:mt-32">
             <div class="mr-[84px]">
                 <a href=""><img class="object-cover h-[560px] rounded-xl"
-                        src="https://i.pinimg.com/564x/57/8c/a8/578ca81049c051d5a1fbb752f3d7f2f0.jpg" alt=""></a>
+                        src="https://i.pinimg.com/564x/cb/c7/ef/cbc7ef3b7c86abf36d031c57967c48f5.jpg" alt=""></a>
             </div>
             <form action="./dangNhap.php" method="POST">
                 <div class="mt-6 ml-12 ">
@@ -134,11 +131,11 @@
                             nhập ngay</button>
                     </div>
                     <div class="mt-9 text-center mr-16 lg:mr-0">
-                        <a href="">
-                            <a class="font-normal text-sm text-[#37A9CD] cursor-pointer">Quên mật khẩu</a>
+                        <a href="./forgotPassword.php">
+                            <p class="font-normal text-sm text-[#37A9CD] cursor-pointer">Quên mật khẩu</p>
                         </a>
                         <div class="flex mt-2 justify-center items-center">
-                            <a href=".change_Password.php">
+                            <a href="./change_Password.php">
                                 <h6 class="text-[#616161] font-normal text-sm">Đổi mật khẩu?</h6>
                             </a>
                             <a href="./dangKi.php">

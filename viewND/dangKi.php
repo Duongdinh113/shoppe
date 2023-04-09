@@ -62,7 +62,7 @@
     </div>
     <div class="lg:flex lg:justify-center lg:items-center lg:mt-32">
             <div class="mr-[84px]">
-                <a href=""><img class="h-[600px] rounded-xl" src="https://i.pinimg.com/564x/6d/af/4d/6daf4d8945cb714b580f9a0a2aaffcb8.jpg" alt=""></a>
+                <a href=""><img class="h-[600px] rounded-xl" src="https://i.pinimg.com/564x/92/63/0f/92630f4d7168440629c89a548e64ffc4.jpg" alt=""></a>
             </div>
             <div>
                 <h1 class="font-bold text-3xl text-[#D93240] text-center">Đăng ký</h1>
