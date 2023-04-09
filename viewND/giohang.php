@@ -81,6 +81,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
                 <td><img src="<?= "../image/".$pro['image']?>" alt=""></td>
                 <td><input type="number" value="<?= $pro['sl']?>" name="" id=""></td>
                 <td> <h3><?= $pro['gia']?></h3></td>
+                <td><a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id_p']?>">xóa</a></td>
                <?php 
                     $sl = $pro['sl'];
                      $gia = $pro['gia'];
@@ -98,7 +99,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
             </tr>
         </tbody>
     </table>
-   
+  <a href="./thongTin.php"><button>Thanh Toán</button></a>
 </body>
                 
 </html>

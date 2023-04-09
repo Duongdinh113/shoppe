@@ -24,6 +24,7 @@
                     <li><a href="sanpham.php">Sản Phẩm </a></li>
                     <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
                     <li><a href="lienhe.php">Liên Hệ </a></li>
+                    <li><a href="donHangdaMua.php">Đơn Hàng </a></li>
                     <li><a href="./giohang.php">Giỏ Hàng</a></li>
                 </ul>
             </div>
@@ -86,8 +87,6 @@
                                     <h3><?= $item1["name"]?></h3>
                                     <p><?= $item1["descrtiption"]?></p>
                                     <span class="gia"><?= $item1["price"]."$"?></span>
-                            
-                                    <a class="dathang" href=""><button>Đặt Hàng</button></a>
                            
                         </div>
                     <?php endforeach?>
