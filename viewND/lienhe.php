@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/layout.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-    .container {
+    .lienhe {
         width: 600px;
         margin: 0 auto;
         padding-top: 10%;
@@ -27,8 +28,41 @@
 </style>
 
 <body>
-    <div class="container">
+<div class="container">
+<header>
+            <div class="logo">
+                <img src="image/logo_1.1.png" alt="">
+            </div>
+            <div class="menu">
+                <ul class="">
+                    <li><a href="index.php">Trang Chủ</a></li>
+                    <li><a href="sanpham.php">Sản Phẩm </a></li>
+                    <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                    <li><a href="lienhe.php">Liên Hệ </a></li>
+                    <li><a href="donhang.php">Đơn Hàng</a></li>
+                    <li><a href="./giohang.php">Giỏ Hàng</a></li>
+                </ul>
+            </div>
 
+            <div class="authenticate">
+                <?php
+                if (empty($_SESSION["email"])) {
+                    echo ' <div >
+                    <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
+                    <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
+                    </div>';
+                } else {
+                    echo '<div class="text-center w-[216px]">
+                    <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
+                    <p >' . $_SESSION["email"] . '</p>
+                            
+                    </div>';
+                }
+                ?>
+            </div>
+        </header>
+    <div class="lienhe">
+    
         <h2>Contact Us</h2>
         <p>Say Hello send us your thoughts about our products or share
             your ideas with our Team!</p>
@@ -58,6 +92,7 @@
 
 
         </form>
+        </div>
         <script>
             function dk() {
 
