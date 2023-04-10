@@ -9,9 +9,32 @@
     <title>GIẢM GIÁ</title>
 </head>
 <style>
-    .del{
-       display:flex;
-       height: 400px;
+    .box{
+        display:grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       margin-left: 10%;
+    }
+    .dell{
+        width: 500px;
+  
+     margin-top: 10%;
+       height: 600px;
+    }
+    .dell img{
+        width: 400px;
+    }
+    h2{
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    del{
+        color:red;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    h3{
+        font-size: 25px;
     }
 </style>
 <body>
@@ -56,15 +79,15 @@
     $productList = getAll($query);
     ?>
     <div class="flex justify-center">
-        <div class="max-w-[800px]">
-            <div class="grid grid-cols-3 gap-5 w-[800px]">
+        <div >
+            <div class="box">
                 <?php foreach($productList as $item1):?>
                 <div class="dell">   
                     
                    
-                    <img style="width:400px;height:300px; border:1px solid #cdcd"  src="<?= "../image/".$item1["image"]?>" alt="">
-                    <h3><?= $item1["name"]?></h3>
-                    <h3><?= $item1["descrtiption"]?></h3>
+                    <img   src="<?= "../image/".$item1["image"]?>" alt="">
+                    <h2><?= $item1["name"]?></h2>
+                    <p><?= $item1["descrtiption"]?></p>
                     <del><?= $item1["price"]."$"?></del>
                     <h3 class=""><?= $item1["deal"]."$"?></h3>
                     
