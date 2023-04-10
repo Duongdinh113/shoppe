@@ -28,70 +28,71 @@
 </style>
 
 <body>
-<div class="container">
-<header>
-            <div class="logo">
-                <img src="image/logo_1.1.png" alt="">
-            </div>
-            <div class="menu">
-                <ul class="">
-                    <li><a href="index.php">Trang Chủ</a></li>
-                    <li><a href="sanpham.php">Sản Phẩm </a></li>
-                    <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
-                    <li><a href="lienhe.php">Liên Hệ </a></li>
-                    <li><a href="donhang.php">Đơn Hàng</a></li>
-                    <li><a href="./giohang.php">Giỏ Hàng</a></li>
-                </ul>
-            </div>
+    <div class="container">
+    <header>
+                <div class="logo">
+                    <img src="image/logo_1.1.png" alt="">
+                </div>
+                <div class="menu">
+                    <ul class="">
+                        <li><a href="index.php">Trang Chủ</a></li>
+                        <li><a href="sanpham.php">Sản Phẩm </a></li>
+                        <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                        <li><a href="lienhe.php">Liên Hệ </a></li>
+                        <li><a href="donHangdaMua.php">Đơn hàng </a></li>
+                        <li><a href="./giohang.php">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
 
-            <div class="authenticate">
-                <?php
-                if (empty($_SESSION["email"])) {
-                    echo ' <div >
+                <div class="authenticate">
+                    <?php
+                    if (empty($_SESSION["email"])) {
+                        echo ' <div >
                     <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
                     <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
                     </div>';
-                } else {
-                    echo '<div class="text-center w-[216px]">
+                    } else {
+                        echo '<div class="text-center w-[216px]">
                     <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
                     <p >' . $_SESSION["email"] . '</p>
                             
                     </div>';
-                }
-                ?>
-            </div>
-        </header>
-    <div class="lienhe">
-    
-        <h2>Contact Us</h2>
-        <p>Say Hello send us your thoughts about our products or share
-            your ideas with our Team!</p>
-        <form action="../control/control_contact.php" method="POST" name="frmDK" onsubmit="return dk()">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Họ và tên </label>
-                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
-                    placeholder="nhập họ tên " required>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nhập email"
-                    required>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"> Nhập số điện thoại </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="sdt">
-                <p class="errSDT" style="color:red ;"></p>
+                    }
+                    ?>
+                </div>
+            </header>
+        <div class="lienhe">
 
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Vấn đề </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="vấn đề " required>
-            </div>
-            <button type="submit" class="btn btn-success">SEND</button>
+            <h2>Contact Us</h2>
+            <p>Say Hello send us your thoughts about our products or share
+                your ideas with our Team!</p>
+            <form action="../control/control_contact.php" method="POST" name="frmDK" onsubmit="return dk()">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Họ và tên </label>
+                    <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                        placeholder="nhập họ tên " required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nhập email"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"> Nhập số điện thoại </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="sdt">
+                    <p class="errSDT" style="color:red ;"></p>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Vấn đề </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="vấn đề "
+                        required>
+                </div>
+                <button type="submit" class="btn btn-success">SEND</button>
 
 
 
-        </form>
+            </form>
         </div>
         <script>
             function dk() {
