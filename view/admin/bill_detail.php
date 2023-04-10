@@ -1,4 +1,10 @@
-!<!DOCTYPE html>
+<?php 
+    require "../../models/connect.php";
+    $id = $_GET["id"];
+    $query = "SELECT `id`, `id_bill`, `id_sp`, `sl`, `total_price` FROM `billdetail` WHERE id_bill = '$id'";
+    $billdetail = getAll($query);
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -70,46 +76,33 @@
     <table class="w-[1000px] h-[200px]">
         <thead>
             <tr class="bg-[black] h-[50px]">
-                <th class="text-[white]">Mã đơn hàng</th>
-                <th class="text-[white]">Họ và tên</th>
-                <th class="text-[white]">Số điện thoại</th>
-                <th class="text-[white]">Địa chị</th>
-                <th></th>
-               
-               
+                <th class="text-[white]">Tên sản phẩm</th>
+                <th class="text-[white]">Số lượng</th>
+                <th class="text-[white]">Giá</th>
+                <th><a class="text-[white]" href="./quanLi_donHang.php">back</a></th>
             </tr>
         </thead>
     
         <tbody>
-            <?php
-               require "../../models/connect.php";
-            //    $query = "SELECT * FROM products"; 
-            //    $productList = getAll($query);
 
-                $user = "SELECT * FROM bill";
-        
-            $productList = getAll($user);               
             
-            
-            ?>
-            
-                <?php foreach($productList as $product):?>
+                <?php foreach($billdetail as $item):?>
                 <tr>   
-                    <td class="text-center">
-                        <?php echo $product["id"]?>
-                    </td>
-                    <td>
-                        <?php echo $product['fullname']?>
-                    </td>
-                    <td>
-                        <?php echo $product['phone']?>
-                    </td>
-                    <td>
-                        <?php echo $product['diachi']?>
-                    </td>
-                    <td>
-                        <a href="./bill_detail.php?id=<?php echo$product["id"]?>">detail</a>
-                    </td>
+                   <td>
+                        <?php $id_sp = $item['id_sp'];
+                        $query = "SELECT * FROM products WHERE id = $id_sp";
+                        $product = getOne($query);
+                        echo $product['name'];
+                        ?>
+
+                   </td>
+                   <td>
+                    <?= $item['sl']?>
+                   </td>
+                   <td>
+                    <?= $item['total_price']?>
+                   </td>
+                
                 </tr>
                 <?php endforeach?>
                 

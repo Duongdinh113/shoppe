@@ -70,7 +70,7 @@
                 <form action="../control/control_dK.php" method="POST" enctype="multipart/form-data">
                     <div>
                         <p class="lg:font-normal lg:text-base lg:text-[#4A5568] lg:mt-3">Họ và tên</p>
-                        <input  type="text" class="border-2 border-[#D93240] mt-2 rounded w-[300px] h-[48px] pl-3 name="username" id="username" required=""  placeholder="Bae Joo Huyn">
+                        <input  type="text" class="border-2 border-[#D93240] mt-2 rounded w-[300px] h-[48px] pl-3" name="username" id="username" required=""  placeholder="Bae Joo Huyn">
                     </div> 
                     <div>
                         <p class="lg:font-normal lg:text-base lg:text-[#4A5568] lg:mt-3">Email</p>
