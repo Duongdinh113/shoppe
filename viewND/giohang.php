@@ -25,6 +25,9 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
         width: 100px;
         height: 100px;
     }
+    input{
+        width: 100px;
+    }
     button a{
         font-size: 20px;
         color:white;
