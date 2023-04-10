@@ -1,3 +1,6 @@
+body{
+    background-color: beige;
+}
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -138,16 +141,16 @@ a:hover{
 }
 
 .product img {
-    width: 200px;
-    height: 200px;
-    margin: 16%;
-
-
+    width: 300px;
+    height: 300px;
 }
 
-.div img {
+.div{
     overflow: hidden;
-    transition: 0.5s;
+}
+.div img {
+    
+    transition-duration: 0.3s;
 }
 
 .div img:hover {
@@ -173,9 +176,6 @@ a:hover{
     text-transform: uppercase;
 }
 .boxs{
-    
-    border-radius: 5px ;
-    height: 100px;
     padding-left: 5%;
 
 }
@@ -186,15 +186,11 @@ a:hover{
     
 }
 .boxs span{
-    
     font-size: 23px;
- font-weight: 600;
- float: right;
- padding-right: 10%;
- 
-   color: red;
-     
- }
+    font-weight: 600;
+    padding-right: 10%;
+    color: red;
+}
 
 
 .mr {
@@ -422,9 +418,11 @@ a:hover{
     background-color: white;
 }
 .item2{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 100px;
 }
+
 .item2-1{
     text-align: center;
 }
@@ -434,6 +432,7 @@ a:hover{
 }
 .item2-1 img{
     width: 100%;
+    border-radius: 10px;
 }
 
 /**/
@@ -466,5 +465,31 @@ textarea{
     width: 100%;
 }
 
+h2{
+    text-align: center;
+}
 
-
+a.buynow{
+    padding: 10px 0px;
+    background-color: darkkhaki;
+    position: absolute; 
+    bottom: -39px;
+    width: 100%;
+    transition: 0.25s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+}
+.div a.anh img{
+    width: 100%;
+    display: block;/*mat khoang trang ben duoi*/
+}
+.div a.anh {
+    display: block;
+}
+.div {
+    position: relative;
+    overflow: hidden;
+}
+.div:hover a.buynow{
+    bottom: 20px;
+}
