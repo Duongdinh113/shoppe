@@ -21,6 +21,15 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
         margin: 0 auto;
         box-sizing: border-box;
     }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    button a{
+        font-size: 20px;
+        color:white;
+        text-decoration: none;
+    }
 </style>
 <body>
     <div class="container">
@@ -80,7 +89,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
             <?php $tong = 0;
             $count = 0;
             ?>
-            
+          
             <?php foreach($pr as $pro):?>
             <tr>
                 <?php $count = $count + 1?>
@@ -89,7 +98,7 @@ if (isset($_SESSION['id'] )&& ($_SESSION['id']>0)){
                 <td><img src="<?= "../image/".$pro['image']?>" alt=""></td>
                 <td><input type="number" value="<?= $pro['sl']?>" name="" id=""></td>
                 <td> <h3><?= $pro['gia']?></h3></td>
-                <td><a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id_p']?>">xóa</a></td>
+                <td> <button class="btn btn-success"> <a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id_p']?>">xóa</a>  </button></td>
                <?php 
                     $sl = $pro['sl'];
                      $gia = $pro['gia'];
