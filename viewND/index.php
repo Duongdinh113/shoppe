@@ -25,6 +25,7 @@
                     <li><a href="sanpham.php">Sản Phẩm </a></li>
                     <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
                     <li><a href="">Liên Hệ </a></li>
+                    <li><a href="donHangdaMua.php">Đơn Hàng </a></li>
                     <li><a href="./giohang.php">Giỏ Hàng</a></li>
                 </ul>
             </div>
@@ -47,23 +48,24 @@
             </div>
         </header>
         <div class="slideshow">
-                <img id="slide" src="./slideshow/1.jpg" alt="" width="100%" height="500px" id="anh">
-            </div>
-            <script>
-                var arr_slide = [
-                    "./slideshow/1.jpg",
-                    "./slideshow/2.jpg",
-                    "./slideshow/3.jpg"
-                ]
-                var index = 1;
-                function Next() {
-                    index++;
-                    if (index >= arr_slide.length) index = 1;
-                    var slide = document.getElementById("slide");
-                    slide.src = arr_slide[index];
-                }
-                setInterval("Next()", 4000);
-            </script>        
+            <img id="slide" src="./slideshow/1.jpg" alt="" width="100%" height="500px" id="anh">
+        </div>
+        <script>
+            var arr_slide = [
+                "./slideshow/1.jpg",
+                "./slideshow/2.jpg",
+                "./slideshow/3.jpg"
+            ]
+            var index = 1;
+
+            function Next() {
+                index++;
+                if (index >= arr_slide.length) index = 1;
+                var slide = document.getElementById("slide");
+                slide.src = arr_slide[index];
+            }
+            setInterval("Next()", 4000);
+        </script>
 
         <div>
             <div class="banner">
@@ -78,8 +80,11 @@
 
                     <p>The place where the world's most prestigious and quality brands are gathered</p>
                     <div class="check">
-                        <input type="text" placeholder="Enter your delivery location">
-                        <button>Discover</button>
+                        <form action="" method="post">
+                            <input type="text" name="noidung" placeholder="Enter your delivery location">
+                            <button type="submit" name="btn">Discover</button>
+                        </form>
+
                     </div>
 
                 </div>
@@ -99,97 +104,96 @@
                 </div>
                 <div class="item2">
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/1.jpg" alt="">
                         <h3>Ring</h3>
                     </div>
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/2.jpg" alt="">
                         <h3>Necklace</h3>
                     </div>
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/3.jpg" alt="">
                         <h3>Earring</h3>
                     </div>
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/4.jpg" alt="">
                         <h3>Clock</h3>
                     </div>
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/5.jpg" alt="">
                         <h3>Bracelet</h3>
                     </div>
                     <div class="item2-1">
-                        <img src="./image/11.png" alt="">
+                        <img src="./image/6.jfif" alt="">
                         <h3>Anklet</h3>
                     </div>
                 </div>
             </div>
         </div>
-        
 
 
-            <?php
+        <h2>TOP SẢN PHẨM HOT</h2>
+        <?php
 
-            require '../models/connect.php';
-            $query = "SELECT * FROM products";
-            $productList = getAll($query);
-            //  echo "<pre>";
-            //  var_dump($productList);die;
-
-
-            ?>
+        require '../models/connect.php';
+        $query = "SELECT * FROM products";
+        $productList = getAll($query);
+        //  echo "<pre>";
+        //  var_dump($productList);die;
 
 
+        ?>
 
 
-            <div>
-                <div class="product mr">
-                    <?php for ($i = 0; $i < 4; $i++) : ?>
-                        <div class="trangchu">
-                            <div class="div"> <img src="<?= " ../image/" . $productList[$i]["image"] ?>"> </div>
-                            <div class="boxs">
-                                <h3>
-                                    <?= $productList[$i]["name"] ?>
-                                </h3>
-                                <p>
-                                    <?= $productList[$i]["descrtiption"] ?>
-                                </p>
-                                <span>
-                                    <?= $productList[$i]["price"] . "$" ?>
-                                </span>
-                            </div>
+
+
+        <div>
+            <div class="product mr">
+                <?php for ($i = 0; $i < 4; $i++) : ?>
+                    <div class="trangchu">
+                        <div class="div">
+                            <a href="" class="anh"><img src="<?= " ../image/" . $productList[$i]["image"] ?>"></a> 
+                            <a href="./sanpham.php" class="buynow">THÔNG TIN</a>
                         </div>
-                    <?php endfor ?>
-
-                </div>
+                    
+                        <div class="boxs">
+                            <h3>
+                                <?= $productList[$i]["name"] ?>
+                            </h3>
+                            <p>
+                                <?= $productList[$i]["descrtiption"] ?>
+                            </p>
+                            <span>
+                                <?= $productList[$i]["price"] . "$" ?>
+                            </span>
+                        </div>
+                    </div>
+                <?php endfor ?>
 
             </div>
-            <div class="showadd mr">
-                <h1>Show more</h1>
 
-
-                <h2>Tips & Tricks</h2>
-
-
-                <div class="tips">
-                    <div class="tips-box mr">
-                        <img src="image/item5.png" alt="">
-                        <p>How to create a living room to love</p>
-                        <p>20 jan 2020</p>
-                    </div>
-                    <div class="tips-box mr">
-                        <img src="image/item6.png" alt="">
-                        <p>Solution for clean look working space
-                        </p>
-                        <p>10 jan 2020</p>
-                    </div>
-                    <div class="tips-box mr">
-                        <img src="image/item7.png" alt="">
-                        <p class="font-bold">Make your cooking activity more fun with good setup</p>
-                        <p>20 jan 2020</p>
-                    </div>
+        </div>
+        <div class="showadd mr">
+            <h1>Show more</h1>
+            <div class="tips">
+                <div class="tips-box mr">
+                    <img src="image/item5.png" alt="">
+                    <p>How to create a living room to love</p>
+                    <p>20 jan 2020</p>
+                </div>
+                <div class="tips-box mr">
+                    <img src="image/item6.png" alt="">
+                    <p>Solution for clean look working space
+                    </p>
+                    <p>10 jan 2020</p>
+                </div>
+                <div class="tips-box mr">
+                    <img src="image/item7.png" alt="">
+                    <p class="font-bold">Make your cooking activity more fun with good setup</p>
+                    <p>20 jan 2020</p>
                 </div>
             </div>
+        </div>
 
         <footer>
             <div class="logocuoi">
