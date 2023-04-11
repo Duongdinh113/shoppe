@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +37,7 @@
                     <li><a href="sanpham.php">Sản Phẩm </a></li>
                     <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
                     <li><a href="">Liên Hệ </a></li>
+                    <li><a href="donHangdaMua.php">Đơn hàng </a></li>
                     <li><a href="./giohang.php">Giỏ Hàng</a></li>
                 </ul>
             </div>
@@ -43,15 +45,14 @@
             <div class="authenticate">
                 <?php
                 if (empty($_SESSION["email"])) {
-                    echo ' <div >
+                    echo ' <div>
                     <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
-                    <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
+                    <button id="signup"><a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                 } else {
                     echo '<div class="text-center w-[216px]">
                     <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >' . $_SESSION["email"] . '</p>
-                            
+                    <p >'. $_SESSION["email"] .'</p>   
                     </div>';
                 }
                 ?>
@@ -66,6 +67,7 @@
                     <th class="text-[white]">Product Name</th>
                     <th class="text-[white]">number</th>
                     <th class="text-[white]">total_price</th>
+                    <th class="text-[white]">order status</th>
 
 
                 </tr>
@@ -107,7 +109,13 @@
                         <td>
                             <?php echo $product["total_price"] ?>
                         </td>
-
+                        <td>
+                            <?php $id = $product['id_bill'];
+                                $query = "SELECT * FROM bill WHERE id = '$id'";
+                                $bill = getOne($query);
+                            ?>
+                            <?php echo $bill['orderstatus']?>
+                        </td>
 
                     </tr>
                 <?php endforeach ?>

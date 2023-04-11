@@ -13,50 +13,7 @@
 
     <body >
         <div class="container">
-    <div class="header">
-                    <div class="menu1">
-                        <h1><img src="image/logo.png" alt=""></h1>
-                    </div>
-
-                    <div class="menu2">
-                        <ul class="">
-                            <li><a href="index.php">Trang Chủ</a></li>
-                            <li><a href="sanpham.php">Sản Phẩm </a></li>
-                            <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
-                            <li><a href="">Liên Hệ </a></li>
-                            <li><a href="./giohang.php">Giỏ Hàng</a></li>
-                        </ul>
-                    </div>
-                    <div class="btn">
-                        <?php
-        if(empty($_SESSION["email"])){
-            echo ' <div >
-            <button > <a href="dangNhap.php">Đăng nhập</a></button>
-            <button >  <a href="dangKi.php">Đăng kí</a></button>
-            </div>';
-        }else{  
-           echo '<div >
-           <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-           <p >'.$_SESSION["email"].'</p>
-           
-            </div>';
-        }
-        ?>
-
-
-
-                    </div>
-               
-           
-            <div>
-
-        
     
-            </div>
-          
-  
-  
-    </div>
    
     <div >
         <div class="absolute right-[330px] top-[670px]">
@@ -149,17 +106,7 @@
         </div>
         <script src="vadiform_DK.js"></script>
         <!-- <div class="footer mr"> -->
-  <div class="anh"><h1>  <img src="image/logo.png" alt=""></h1></div>
-    <div class="menu2">
-        <ul class="">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">About us </a></li>
-            <li><a href="">Contract us </a></li>
-
-        </ul>
-    </div>
-</div>  
+  
     </body>
 
     </html>

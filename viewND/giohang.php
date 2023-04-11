@@ -103,7 +103,7 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                                     <?= $pro['gia'] ?>
                                 </h3>
                             </td>
-                            <td><a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id_p'] ?>">xóa</a></td>
+                            <td><a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id'] ?>">xóa</a></td>
                             <?php
                             $sl = $pro['sl'];
                             $gia = $pro['gia'];

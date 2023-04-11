@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -74,9 +74,8 @@
                 <th class="text-[white]">Họ và tên</th>
                 <th class="text-[white]">Số điện thoại</th>
                 <th class="text-[white]">Địa chị</th>
-                <th></th>
-               
-               
+                <th class="text-[white]">Trạng Thái</th>
+               <th></th>
             </tr>
         </thead>
     
@@ -108,7 +107,16 @@
                         <?php echo $product['diachi']?>
                     </td>
                     <td>
-                        <a href="./bill_detail.php?id=<?php echo$product["id"]?>">detail</a>
+                        <?php echo $product['orderstatus']?>
+                    </td>
+                    <td>
+                        <a class="bg-[#38A169] border-[1px]" href="./bill_detail.php?id=<?php echo$product["id"]?>">chi tiết</a>
+                        <form action="../../control/control_xacNhandatHang.php" method="POST">
+                            <input type="text" value="dang giao hang" hidden name="xacnhan" id="">
+                            <input type="text" hidden value="<?php echo $product['id']?>" name="id" id="">
+                            <button class="bg-[#38A169] border-[1px]">xác nhận đơn hàng</button>
+                    </form>
+                        <a class="bg-[#38A169] border-[1px]" href="./bill_detail.php?id=<?php echo$product["id"]?>">xác nhận hủy</a>
                     </td>
                 </tr>
                 <?php endforeach?>
