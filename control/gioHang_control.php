@@ -1,7 +1,6 @@
 <?php 
 
     require "../models/connect.php";
-
     $id_p = $_POST["id_p"];
     $id_user = $_POST['id_user'];
     $name = $_POST['name'];

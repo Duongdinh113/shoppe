@@ -9,7 +9,6 @@
   
     $categoryId = $_POST["category"];
     
-       
     
     $query = "INSERT INTO products (name, descrtiption, image, deal, price, class) VALUES ('$productName','$productDesc','$productImage',$deal,$productPrice,$categoryId)";
     move_uploaded_file($_FILES["product-image"]["tmp_name"],"../image/".$_FILES["product-image"]["name"]);
