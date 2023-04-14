@@ -4,51 +4,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="css/layout.css">
     <title>GIẢM GIÁ</title>
 </head>
 <style>
-    .del{
-       display:flex;
-       height: 400px;
+    .box{
+        display:grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       margin-left: 10%;
     }
+    .dell{
+        width: 500px;
+  
+     margin-top: 10%;
+       height: 600px;
+    }
+    .dell img{
+        width: 400px;
+    }
+    h2{
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    del{
+        color:red;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    h3{
+        font-size: 25px;
+    }
+    .c:hover .b{
+    display: block;
+    }
+    .b{
+        padding: 40px;
+        position: absolute;
+        padding-left: 70px;
+        display: none;
+    }
+    .c{
+        display: flex;
+    }
+    .a{
+    width: 50px;
+    border-radius: 50%;
+    border: 0.1875em solid #0F1C3F;
+    height: 50px;
+   }
 </style>
 <body>
     <?php 
     session_start();
     ?>
-      <?php 
-    
-    if(empty($_SESSION["email"])){
-        echo ' <div class="flex  gap-4 border-[1px]">
-        <a href="dangNhap.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng nhập</button></a>
-        <a href="dangKi.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng kí</button></a>
-        </div>';
-    }else{  
-       echo '<div class="text-center w-[216px]">
-       <a class="" href="../control/login_out.php"><button class="text-[#0066B2] border-[1px] border-[#0066B2] w-[100px] h-[25px]">Đăng xuất</button></a>
-       <p class="text-[#0066B2] text-[17px]">'.$_SESSION["email"].'</p>
-       
-        </div>';
-    
-    }
-  
-?>
+     <header>
+            <div class="logo">
+                <img src="image/logo_1.1.png" alt="">
+            </div>
+            <div class="menu">
+                <ul class="">
+                    <li><a href="index.php">Trang Chủ</a></li>
+                    <li><a href="sanpham.php">Sản Phẩm </a></li>
+                    <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
+                    <li><a href="lienhe.php">Liên Hệ </a></li>
+                    <li><a href="donHangdaMua.php">Đơn Hàng </a></li>
+                    <li><a href="./giohang.php">Giỏ Hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="authenticate">
+                <?php
+                    if(empty($_SESSION["email"])){
+                    echo ' <div >
+                    <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
+                    <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
+                    </div>';
+                    }else{  
+                        echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                        <div class="b">
+                        <p> <a href="../control/login_out.php">Đăng xuất</a></p>
+                        <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                        <p>tài khoản của tôi</p>
+                       </div>
+                       </div>
+                        ';
+                    }
+                ?>
+            </div>
+        </header>
     <?php 
     require "../models/connect.php";
     $query = "SELECT * FROM products WHERE deal";
     $productList = getAll($query);
     ?>
     <div class="flex justify-center">
-        <div class="max-w-[800px]">
-            <div class="grid grid-cols-3 gap-5 w-[800px]">
+        <div >
+            <div class="box">
                 <?php foreach($productList as $item1):?>
                 <div class="dell">   
                     
                    
-                    <img style="width:400px;height:300px; border:1px solid #cdcd"  src="<?= "../image/".$item1["image"]?>" alt="">
-                    <h3><?= $item1["name"]?></h3>
-                    <h3><?= $item1["descrtiption"]?></h3>
+                    <img   src="<?= "../image/".$item1["image"]?>" alt="">
+                    <h2><?= $item1["name"]?></h2>
+                    <p><?= $item1["descrtiption"]?></p>
                     <del><?= $item1["price"]."$"?></del>
                     <h3 class=""><?= $item1["deal"]."$"?></h3>
                     

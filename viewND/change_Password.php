@@ -1,39 +1,71 @@
-<div class="flex justify-center my-[100px]">
-        <div class="flex max-w-[700px] gap-5 items-center">
-            <div class="max-w-[350px]">
-                <img class="max-w-full" src="image/item9.png" alt="">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src=".validate_change_pass.js"></script>
+    
+</head>
+<body>
+    <div class="lg:flex lg:justify-center lg:items-center lg:mt-32">
+            <div class="mr-[84px]">
+                <a href=""><img class="object-cover h-[560px] rounded-xl"
+                        src="https://i.pinimg.com/564x/76/19/27/7619273b3112edb1953d6a020a051803.jpg" alt=""></a>
             </div>
-            <div class="max-w-[350px]">
-                <div class="text-center">
-                    <p class="font-bold text-[24px] text-[#37A9CD]">Đăng nhập</p>
-                </div>
-                <form class="grid gap-y-[7px]" action="./change_Password.php" method="POST">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label><br>
-                        
-                        <input  class="w-[360px] h-[40px]  pl-[5px] border-[#37A9CD] border-[1px] rounded" type="email" placeholder="dinhdvph29050@gamil.com" name="email" required="">
-                       
+            <form action="../control/change_password.php" method="POST">
+                <div class="mt-6 ml-12 ">
+                    <h1 class="font-bold text-3xl text-[#37A9CD] text-center">Đổi mật khẩu</h1>
+                    <div class="mt-6">
+                        <p class="mt-3 text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Email
+                        </p>
+                        <input id="email" name="email" type="text" 
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 " >
+                            <h5  class="mt-[5px] text-green-900 font-bold" id="messageErrorP"></h5>
+
+        
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Mật khẩu cũ<br>
-                        <input class="w-[360px] h-[40px]  pl-[5px] border-[#37A9CD] border-[1px] rounded" required=""  type="password" name="pass">
+                    <div class="mt-6">
+                        <p class="mt-3 text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Mật Khẩu hiện tại
+                        </p>
+                        <input id="old-pass" name="old-pass" type="password" 
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 " >
+                            <h5  class="mt-[5px] text-green-900 font-bold" id="messageErrorP"></h5>
+
+        
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Mật khẩu mới<br>
-                        <input class="w-[360px] h-[40px]  pl-[5px] border-[#37A9CD] border-[1px] rounded" required=""  type="password" name="password">
+                    <div class="mt-6">
+                        <p class="mt-3 text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Mật Khẩu mới
+                        </p>
+                        <input id="new-pass" name="new-pass" type="password" 
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 " >
+                            <h5  class="mt-[5px] text-green-900 font-bold" id="messageErrorM"></h5>
+        
+                    </div>
+                    <div class="mt-6">
+                        <p class="mt-3 text-base font-semibold lg:font-normal lg:text-lg lg:text-[#4A5568] lg:mt-3">Nhập lại mật Khẩu mới
+                        </p>
+                        <input id="new-pass-retype" name="" type="password"
+                            class="border-2 border-[#37A9CD] mt-2 rounded w-[300px] h-[48px] pl-3 " >
+                            <h5  class="mt-[5px] text-green-900 font-bold" id="messageErrorN"></h5>
                     </div>
                     <div>
-                       
+                        <button type="submit" name='submit' id="btn-change-pass"
+                        class="mt-8 text-[#FFFFFF] bg-[#37A9CD] text-sm font-bold w-[300px] h-[40px] text-center rounded ">Đổi mật khẩu</button>
+                        <h5  class="mt-[5px] text-green-900 font-bold" id="message"></h5>
+                        <p class="mt-4 text-red-700 font-bold">
+                <?php echo isset($_GET['msg']) ? $_GET['msg'] : ''; ?>
+            </p>
                     </div>
-                    <div class="grid gap-y-[10px] pt-[60px]">
-                        <button class="w-[360px] h-[40px] bg-[#37A9CD] font-bold text-[white] border-[1px] border-[#37A9CD]  rounded" type="submit" name="btn">Đổi mật khẩu</button>
-                        
-                        </button>
-                    </div>
-                  
-                </form>
-            
-            </div>
-          
+                </div>
+            </form>
+
+        
         </div>
-    </div>
+
+
+</body>
+</html>
