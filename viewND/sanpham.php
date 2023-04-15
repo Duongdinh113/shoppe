@@ -6,53 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/layout.css">
-  
+
     <title>SẢN PHẨM</title>
 </head>
 <style>
     .slide {
-        gap: 20px;
+        gap: 30px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0.3fr 1fr;
         margin-top: 10%
     }
 
 
     .sanpham1 {
-  
-        margin-left: 15%;
         display: grid;
-        width: 220px;
-        height: 300;
-      
+    }
+    .sanpham1 h3{
+        text-align: center;
+    }
+    .sanpham1 p{
+        padding-left: 30px;
+    }
+    .sanpham1 span{
+        padding: 0px 10px 30px 30px;
     }
 
-   
-
-    .img {
-        margin-top: 20px;
-        max-width: 80%;
+    .a {
+        width: 50px;
+        border-radius: 50%;
+        border: 0.1875em solid #0F1C3F;
+        height: 50px;
     }
+
+    
 
     .loai {
         border-radius: 5px;
-        width: 400px;
+        /* width: 319px; */
         height: 500px;
-        border: 1px solid black;
-       
-     
-        
+        /* border: 1px solid black; */
+        background-color: #F4F4F4;
     }
 
     .loai h1 {
-        width: 400px;
         border-bottom: 1px solid black;
-     
         text-align: center;
     }
 
     .loai a {
-        margin-left: 10%;
         text-decoration: none;
         text-transform: capitalize;
 
@@ -60,52 +61,81 @@
 
     .loai h2 {
         padding-bottom: 25px;
-        width: 400px;
-        border-bottom:  1px  solid #cdcd;
+        border-bottom: 1px solid #cdcd;
+        text-align: center;
 
     }
 
     .sanpham {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
         border-radius: 5px;
+        gap: 25px;
+        background-color: #F4F4F4;
+        padding: 15px 15px;
     }
 
     .sanpham1 {
-        width: 300px;
+        /* width: 300px; */
+        /* border: 1px solid black; */
+        border-radius: 15px;
+        background-color: white;
     }
 
-    p input{
+    .sanpham1 a img {
+        margin: 10px 10px;
+        width: 94%;
+        height: 300px;
+    }
+
+    p input {
         width: 250px;
         margin-left: 10px;
     }
-h3{
-    font-size: 25px;
-    font-weight: 700;
-    text-transform: capitalize;
 
-}
-.formdk{
-    margin-top: 15%;
-}
- .tim{
-    width:300px;
-    height: 30px;
-    margin-left:10px;
-}
-.timkiem{
-    background: rgb(19, 170, 84);
-    color: black;
-    height: 30px;
+    h3 {
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: capitalize;
 
-}
-.gia{
-    font-size: 22px;
-    font-weight: 600;
-    color: #A18A68;
-    margin-left: 2px;
-}
+    }
+
+    .formdk {
+        margin: 15% 0px;
+    }
+
+    .tim {
+        margin-left: 40px;
+    }
+
+    .timkiem {
+        background: rgb(19, 170, 84);
+        color: black;
+        height: 30px;
+
+    }
+
+    .gia {
+        font-size: 22px;
+        font-weight: 600;
+        color: #A18A68;
+    }
+
+    .c:hover .b {
+        display: block;
+    }
+
+    .b {
+        padding: 40px;
+        position: absolute;
+        padding-left: 70px;
+        display: none;
+
+    }
+
+    .c {
+        display: flex;
+    }
 </style>
 
 <body>
@@ -130,7 +160,6 @@ h3{
             </div>
 
 
-
             <div class="authenticate">
                 <?php
                 if (empty($_SESSION["email"])) {
@@ -139,17 +168,21 @@ h3{
                     <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                 } else {
-                    echo '<div class="text-center w-[216px]">
-                    <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >' . $_SESSION["email"] . '</p>
-                            
-                    </div>';
+                    echo '<div class="c"><img class="a" src="../image/' . $_SESSION['image'] . '" alt=""><p>' . $_SESSION['email'] . '</p>
+                    <div class="b">
+                    <p> <a href="../control/login_out.php">Đăng xuất</a></p>
+                    <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                    <p>tài khoản của tôi</p>
+                   </div>
+                   </div>
+                    ';
                 }
                 ?>
             </div>
         </header>
 
         <?php
+
 
         require "../models/connect.php";
 
@@ -171,33 +204,43 @@ h3{
 
         <div class="slide">
             <!-- Danh mục -->
+            <?php if (empty($_POST["search"])) {
+                $sanpham = "SELECT * FROM products";
+            } else {
+                $search = $_POST["search"];
+
+                $sanpham = "SELECT * FROM products WHERE name LIKE '$search'";
+            }
+            $productList = getAll($sanpham) ?>
 
             <div class="loai">
-                <h1> Danh Mục</h1>
-                <?php foreach ($categoryidList as $item): ?>
+                <div class="formdk">
+                    <form action="./sanpham.php" method="POST">
+
+                        <input type="text" name="search" class="tim">
+                        <input type="submit" value="Tìm kiếm" class="timkiem">
+                    </form>
+
+                </div>
+                <br>
+                <hr>
+                <?php foreach ($categoryidList as $item) : ?>
                     <div class="loai1">
                         <h2>
                             <a href="./sanpham.php?id=<?= $item["iddm"] ?>"><?= $item["namee"] ?></a>
                         </h2>
                     </div>
                 <?php endforeach ?>
-                <div class="formdk">
-                    <form action="" method="post">
-                    
-                <input type="search" name="search" class="tim" >
-                        <input type="submit" value="Tìm kiếm"  class="timkiem">
-                    </form>
-                  
-                </div>
+
+
             </div>
 
             <!-- Sản phẩm -->
             <div class="sanpham">
-                <?php foreach ($productList as $item1): ?>
+                <?php foreach ($productList as $item1) : ?>
                     <div class="sanpham1">
 
-                        <a href="./chiTietSanPham.php?id=<?= $item1["id"] ?>"><img class="img"
-                                src="<?= "../image/" . $item1["image"] ?>" alt=""> </a>
+                        <a href="./chiTietSanPham.php?id=<?= $item1["id"] ?>"><img src="<?= "../image/" . $item1["image"] ?>" alt=""> </a>
                         <h3>
                             <?= $item1["name"] ?>
                         </h3>
@@ -205,11 +248,72 @@ h3{
                             <?= $item1["descrtiption"] ?>
                         </p>
                         <span class="gia">
-                            <?="$".  $item1["price"]  ?>
+                            <?= "$" .  $item1["price"]  ?>
                         </span>
 
                     </div>
                 <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="footer">
+            <div class="footer-address">
+                <h2>HEROBIZ</h2>
+                <div class="address">
+                    <p>A108 Adam</p>
+                    <p>NY 535022</p>
+                </div>
+                <p>Phone:+1 5589</p>
+                <p>Emaillinfo@example.com</p>
+            </div>
+            <div class="footer-nav">
+                <div class="nav">
+                    <h3>Useful</h3>
+                    <p>Home</p>
+                    <p>About us</p>
+                    <p>Services</p>
+                    <p>Terms of</p>
+                    <p>Privacy</p>
+                </div>
+            </div>
+            <div class="nav1">
+                <h3>Our</h3>
+                <p>Web</p>
+                <p>Web</p>
+                <p>Product</p>
+                <p>Marketing</p>
+                <p>Graphic</p>
+            </div>
+            <div class="footer-contaect">
+                <div class="contaect">
+                    <h3>Our</h3>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam moster magna</p>
+                </div>
+                <form action="">
+                    <input type="text" name="" id="">
+                    <button></button>
+                </form>
+            </div>
+        </div>
+        <div class="sub-footer">
+            <div class="chu">
+                <div class="end">
+                    <span>©</span>
+                    <span>HeroBiz</span>
+                    <span>. All Rights<span>
+                </div>
+                <div class="designed">
+                    <span>Designed</span>
+                    <span><a href="">BootstrapMade</a></span>
+                </div>
+            </div>
+            <div class="block">
+                <div class="block-same"></div>
+                <div class="block-same"></div>
+                <div class="block-same"></div>
+                <div class="block-same"></div>
+                <div class="block-same"></div>
             </div>
         </div>
     </div>
