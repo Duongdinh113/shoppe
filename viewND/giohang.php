@@ -17,12 +17,28 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
         <title>GIỎ HÀNG </title>
     </head>
     <style>
-        .container {
-            max-width: 1200px;
-            padding: 0;
-            margin: 0 auto;
-            box-sizing: border-box;
+        
+        input{
+            width: 50px;
         }
+        .c:hover .b{
+            display: block;
+        }
+    .b{
+        padding: 40px;
+        position: absolute;
+        padding-left: 70px;
+        display: none;
+    }
+    .c{
+        display: flex;
+    }
+    .a{
+    width: 50px;
+    border-radius: 50%;
+    border: 0.1875em solid #0F1C3F;
+    height: 50px;
+   }
     </style>
 
     <body>
@@ -50,11 +66,14 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                     <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                     } else {
-                        echo '<div class="text-center w-[216px]">
-                    <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >' . $_SESSION["email"] . '</p>
-                            
-                    </div>';
+                        echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                        <div class="b">
+                        <p> <a href="../control/login_out.php">Đăng xuất</a></p>
+                        <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                        <p>tài khoản của tôi</p>
+                       </div>
+                       </div>
+                        ';
                     }
                     ?>
                 </div>
@@ -103,7 +122,7 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                                     <?= $pro['gia'] ?>
                                 </h3>
                             </td>
-                            <td><a href="../control/control_xoaDonhang.php?id=<?php echo $pro['id_p'] ?>">xóa</a></td>
+                            <td><a class="btn btn-success" href="../control/control_xoaDonhang.php?id=<?php echo $pro['id'] ?>">xóa</a></td>
                             <?php
                             $sl = $pro['sl'];
                             $gia = $pro['gia'];
@@ -123,10 +142,70 @@ if (isset($_SESSION['id']) && ($_SESSION['id'] > 0)) {
                     </tr>
                 </tbody>
             </table>
-            <a href="./thongTin.php"><button>Thanh Toán</button></a>
-
+            <a href="./thongTin.php?id=<?= $tong?>"><button>Thanh Toán</button></a>
+            
         </div>
-
+        <div class="page-footer">
+<div class="footer">
+    <div class="footer-address">
+        <h2>HEROBIZ</h2>
+        <div class="address">
+            <p>A108 Adam</p>
+            <p>NY 535022</p>
+        </div>
+        <p>Phone:+1 5589</p>
+        <p>Emaillinfo@example.com</p>
+    </div>
+    <div class="footer-nav">
+        <div class="nav">
+            <h3>Useful</h3>
+            <p>Home</p>
+            <p>About us</p>
+            <p>Services</p>
+            <p>Terms of</p>
+            <p>Privacy</p>
+        </div>
+    </div>
+    <div class="nav1">
+        <h3>Our</h3>
+        <p>Web</p>
+        <p>Web</p>
+        <p>Product</p>
+        <p>Marketing</p>
+        <p>Graphic</p>
+    </div>
+    <div class="footer-contaect">
+        <div class="contaect">
+            <h3>Our</h3>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam moster magna</p>  
+        </div>
+        <form action="">
+            <input type="text" name="" id="">
+            <button></button>
+        </form>
+    </div>
+</div>
+<div class="sub-footer">
+        <div class="chu">
+            <div class="end">
+                <span>©</span>
+                <span>HeroBiz</span>
+                <span>. All Rights<span>
+            </div>
+            <div class="designed">
+                <span>Designed</span>
+                <span><a href="">BootstrapMade</a></span>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-same"></div>
+            <div class="block-same"></div>
+            <div class="block-same"></div>
+            <div class="block-same"></div>
+            <div class="block-same"></div>
+        </div>
+    </div>
+</div>
     </body>
 
     </html>
