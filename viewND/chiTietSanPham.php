@@ -11,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/layout.css">
     <title>CHI TIẾT SẢN PHẨM </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
     .spctmr {
@@ -28,7 +29,39 @@ session_start();
     textarea {
         width: 100%;
     }
-
+    .c {
+    display: flex;
+    }
+    .a {
+    width: 50px;
+    border-radius: 50%;
+    border: 0.1875em solid #0F1C3F;
+    height: 50px;
+    }
+    .authenticate img {
+    margin-right: 15px;
+    }
+    .b {
+        /* padding: 40px; */
+        position: absolute;
+        /* padding-left: 70px; */
+        display: none;
+        z-index: 3;
+        bottom: 60px;
+        right: 135px;
+        padding: 0px 13px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .b p a{
+        text-decoration: none;
+    }
+    .c:hover .b {
+        display: block;
+    }
 
 
     a.buynow {
@@ -84,31 +117,92 @@ session_start();
     }
 
 
-    .thoigian h4{
+    .thoigian h4 {
         padding: 0px 0px 0px 90px;
     }
-    .topbinhluan{
+
+    .topbinhluan {
+        margin: 50px 0px;
         background-color: #f4f4f4;
         border-radius: 10px;
         padding: 15px 15px;
     }
-    .topbinhluan h3{
+
+    .khachhangbl {
         background-color: white;
-        padding: 10px;
-    }
-    .khachhangbl{
-        background-color: white;
-        border-radius: 10px;
         padding: 5px 5px;
     }
-    .khachhangbl h3{
+
+    .khachhangbl h3 {
         background-color: #FFFBF8;
         border-radius: 10px;
         padding-left: 50px;
     }
-    .thoigian h5{
+
+    .thoigian h5 {
         padding: 0px 0px 0px 90px;
         color: #CCCCCC;
+    }
+    .chitietsp{
+        background-color: #F4F4F4;
+        margin: 100px 0px;
+        padding: 25px 25px;
+    }
+    #soluonghang{
+        color: red;
+    }
+    .soluong b input{
+        width: 50px;
+        padding: 10px;
+    }
+    .giohang a button{
+        font-size: 13px;
+        color: #fff;
+        background: #0879c9;
+        text-decoration: none;
+        border: none;
+        width: 100%;
+        text-transform: uppercase;
+        padding: 13px;
+        outline: none;
+        letter-spacing: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.45);
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-transition: 0.5s all;
+    }
+    .giohang a button:hover{
+        background: #000;
+    }
+    .trangthai p{
+        padding: 10px 30px;
+    }
+    .icon{
+        text-align: center;
+    }
+    .icon i{
+        padding: 20px 20px;
+    }
+    .nut button{
+        font-size: 13px;
+        color: #fff;
+        background: #0879c9;
+        text-decoration: none;
+        border: none;
+        width: 100%;
+        text-transform: uppercase;
+        padding: 13px;
+        outline: none;
+        letter-spacing: 1px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.45);
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 4px;
+        -webkit-transition: 0.5s all;
+    }
+    .nut button:hover{
+        background: #000;
     }
 
 </style>
@@ -135,16 +229,19 @@ session_start();
             <div class="authenticate">
                 <?php
                 if (empty($_SESSION["email"])) {
-                    echo ' <div >
+                    echo ' <div>
                     <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
-                    <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
+                    <button id="signup"><a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                 } else {
-                    echo '<div class="text-center w-[216px]">
-                    <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >' . $_SESSION["email"] . '</p>
-                            
-                    </div>';
+                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    <div class="b">
+                    <p> <a href="../control/login_out.php">Đăng xuất</a></p><hr>
+                    <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p><hr>
+                    <p>tài khoản của tôi</p>
+                   </div>
+                   </div>
+                    ';
                 }
                 ?>
             </div>
@@ -200,12 +297,31 @@ session_start();
                         <input type="text" hidden value="<?php echo $id_p ?>" name="id_p" id="">
                         <input type="text" hidden value="<?php echo $id_user ?>" name="id_user" id="">
                         <input type="text" hidden value="<?php echo $p['name'] ?>" name="name" id="">
-                        <input type="number" min="1" value="1" name="sl" id="">
+                        <div class="soluong">
+                            <b>
+                                Số Lượng :
+                                <input type="number" min="1" value="1" name="sl" id="soluonghang">
+                            </b>
+                            
+                        </div>
                         <input type="text" hidden value="<?php echo $p['image'] ?>" name="image" id="">
                         <input type="text" hidden value="<?php echo $p['price'] ?>" name="price" id=""> <br>
-                        <b>Tình Trạng : Còn Hàng</b>
+                        <div class="trangthai">
+                            <b>Tình Trạng : Còn Hàng</b>
+                            <p><i class="fa-solid fa-truck"></i> Giao hàng nhanh miễn phí tận nơi</p>
+                            <p><i class="fa-solid fa-shield-halved"></i> Bảo mật thông tin tuyệt đối</p>
+                            <p><i class="fa-solid fa-user-check"></i> Kiểm tra hàng mới thanh toán</p>
+                            <p><i class="fa-solid fa-arrow-right-arrow-left"></i> Bảo dưỡng sản phẩm trọn đời</p>
+                        </div>
+                        
+                        
+                        
+                        
+                        
                         <hr>
+                        <div class="giohang">
                         <a href="../control/gioHang_control.php"><button>Thêm vào giỏ hàng</button></a>
+                        </div>
                     </form>
 
                     <div class="icon">
@@ -224,7 +340,7 @@ session_start();
                 ?>
             </div>
         </div>
-        <h3>Thông tin sản phẩm</h3>
+        
         <div class="binhluansp">
             <?php
             if (isset($_SESSION["id"]) && ($_SESSION["id"]) > 0) {
@@ -242,20 +358,44 @@ session_start();
                         <input type="text" hidden value="<?= $_SESSION["email"] ?>" name="name" id="">
                         <input type="text" hidden value="<?= $_SESSION["id"] ?>" name="id_u" id="">
                         <div class="chitietsp">
-                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. Nunc sed porta augue. Morbi porta tempor odio, in molestie diam bibendum sed.</h4>
-                            <p>Weight: 0.3 kg</p>
-                            <p>Dimentions: 15 x 10 x 1 cm</p>
-                            <p>Colours: Black, Browns, White</p>
-                            <p>Material: Metal</p>
+                            <h2>Thông tin sản phẩm</h2>
+                            <hr>
+                            <div class="chitiet">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</ơ>
+                                <p> Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero.</p>
+                                <p> Sed quis mauris eget arcu facilisis consequat sed eu felis.</ơ>
+                                <p> Nunc sed porta augue.</p>
+                                <p>Morbi porta tempor odio, in molestie diam bibendum sed.</p>
+                                <p>Weight: 0.3 kg</p>
+                                <p>Dimentions: 15 x 10 x 1 cm</p>
+                                <p>Colours: Black, Browns, White</p>
+                                <p>Material: Metal</p>
+                                <p>Brand: ELLY.</p>
+                                <p>Color: blue, red.</p>
+                                <p>Case material: Stainless steel.</p>
+                                <p>Strap material: Stainless steel.</p>
+                                <p>Glass material: Sapphire.</p>
+                                <p>Dial Diameter: 25mm</p>
+                                <p>Water resistant: 3ATM.</p>
+                                <p>Power source: Battery</p>
+                                <p>Movement: Japanese Quartz</p>
+                                <p>Production: Outsourcing and assembly in China factory (according to quality standards of ELLY brand)</p>
+                                <p>Warranty period: 01 year (details see in the manual and warranty)</p>
+                                <p>Full set of products: high-end watch ELLY- EH1, high-class watch box, manual and warranty book, warranty card</p>
+                            </div>
+                            
 
 
 
 
                         </div>
-                        <textarea name="comment" id="topbinhluan" cols="180" rows="10" placeholder="sản phẩm tốt"></textarea>
+                        <textarea name="comment" id="topbinhluan" cols="180" rows="8" placeholder="sản phẩm tốt"></textarea>
 
                     </div>
-                    <button>Bình Luận</button>
+                    <div class="nut">
+                        <button>Bình Luận</button>
+
+                    </div>
                 </form>
 
             <?php
@@ -268,7 +408,7 @@ session_start();
 
 
         <div class="topbinhluan">
-            <h3>Đánh giá sản phảm</h3>
+            <h3>ĐÁNH GIÁ SẢN PHẨM</h3>
             <?php foreach ($comment as $bl) : ?>
                 <div class="khachhangbl">
                     <h3>
@@ -283,6 +423,7 @@ session_start();
                         </h5>
 
                     </div>
+                    <hr>
 
                 </div>
             <?php endforeach ?>
