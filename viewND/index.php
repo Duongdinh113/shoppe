@@ -8,7 +8,33 @@
 
     <link rel="stylesheet" href="./css/layout.css">
     <title>Indext</title>
+    <link rel="stylesheet" href="../lib/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../lib/owl/owl.carousel.min.css">
 </head>
+<style>
+    .b {
+        padding: 40px;
+        position: absolute;
+        padding-left: 70px;
+        display: none;
+        z-index: 3;
+    }
+
+    .c:hover .b {
+        display: block;
+    }
+
+    .c {
+        display: flex;
+    }
+
+    .a {
+        width: 50px;
+        border-radius: 50%;
+        border: 0.1875em solid #0F1C3F;
+        height: 50px;
+    }
+</style>
 
 <body>
     <div class="container">
@@ -24,8 +50,8 @@
                     <li><a href="index.php">Trang Chủ</a></li>
                     <li><a href="sanpham.php">Sản Phẩm </a></li>
                     <li><a href="giam_gia.php">Hàng Giảm Giá </a></li>
-                    <li><a href="">Liên Hệ </a></li>
-                    <li><a href="donHangdaMua.php">Đơn Hàng </a></li>
+                    <li><a href="./lienhe.php">Liên Hệ</a></li>
+                    <li><a href="donHangdaMua.php">Đơn hàng </a></li>
                     <li><a href="./giohang.php">Giỏ Hàng</a></li>
                 </ul>
             </div>
@@ -33,24 +59,29 @@
             <div class="authenticate">
                 <?php
                 if (empty($_SESSION["email"])) {
-                    echo ' <div >
+                    echo ' <div>
                     <button id="signin"> <a href="dangNhap.php">Đăng nhập</a></button>
-                    <button id="signup">  <a href="dangKi.php">Đăng kí</a></button>
+                    <button id="signup"><a href="dangKi.php">Đăng kí</a></button>
                     </div>';
                 } else {
-                    echo '<div class="text-center w-[216px]">
-                    <a  href="../control/login_out.php"><button >Đăng xuất</button></a>
-                    <p >' . $_SESSION["email"] . '</p>
-                            
-                    </div>';
+                    echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
+                    <div class="b">
+                    <p> <a href="../control/login_out.php">Đăng xuất</a></p>
+                    <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                    <p>tài khoản của tôi</p>
+                   </div>
+                   </div>
+                    ';
                 }
                 ?>
             </div>
         </header>
-        <div class="slideshow">
+        <div class="slideshow owl-carousel owl-theme">
             <img id="slide" src="./slideshow/1.jpg" alt="" width="100%" height="500px" id="anh">
+            <img id="slide" src="./slideshow/2.jpg" alt="" width="100%" height="500px" id="anh">
+            <img id="slide" src="./slideshow/3.jpg" alt="" width="100%" height="500px" id="anh">
         </div>
-        <script>
+        <!-- <script>
             var arr_slide = [
                 "./slideshow/1.jpg",
                 "./slideshow/2.jpg",
@@ -65,7 +96,7 @@
                 slide.src = arr_slide[index];
             }
             setInterval("Next()", 4000);
-        </script>
+        </script> -->
 
         <div>
             <div class="banner">
@@ -152,10 +183,10 @@
                 <?php for ($i = 0; $i < 4; $i++) : ?>
                     <div class="trangchu">
                         <div class="div">
-                            <a href="" class="anh"><img src="<?= " ../image/" . $productList[$i]["image"] ?>"></a> 
+                            <a href="" class="anh"><img src="<?= " ../image/" . $productList[$i]["image"] ?>"></a>
                             <a href="./sanpham.php" class="buynow">THÔNG TIN</a>
                         </div>
-                    
+
                         <div class="boxs">
                             <h3>
                                 <?= $productList[$i]["name"] ?>
@@ -195,22 +226,96 @@
             </div>
         </div>
 
-        <footer>
-            <div class="logocuoi">
-                <img src="image/logo_1.1.png" alt="">
-            </div>
-            <div class="menucuoi">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Contact Us</a></li>
-                </ul>
-            </div>
-        </footer>
+    </div>
 
-    </div>
-    </div>
+    <div class="page-footer">
+            <div class="footer">
+                <div class="footer-address">
+                    <h2>HEROBIZ</h2>
+                    <div class="address">
+                        <p>A108 Adam</p>
+                        <p>NY 535022</p>
+                    </div>
+                    <p>Phone:+1 5589</p>
+                    <p>Emaillinfo@example.com</p>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav">
+                        <h3>Useful</h3>
+                        <p>Home</p>
+                        <p>About us</p>
+                        <p>Services</p>
+                        <p>Terms of</p>
+                        <p>Privacy</p>
+                    </div>
+                </div>
+                <div class="nav1">
+                    <h3>Our</h3>
+                    <p>Web</p>
+                    <p>Web</p>
+                    <p>Product</p>
+                    <p>Marketing</p>
+                    <p>Graphic</p>
+                </div>
+                <div class="footer-contaect">
+                    <div class="contaect">
+                        <h3>Our</h3>
+                        <p>Tamen quem nulla quae legam multos aute sint culpa legam moster magna</p>
+                    </div>
+                    <form action="">
+                        <input type="text" name="" id="">
+                        <button></button>
+                    </form>
+                </div>
+            </div>
+            <div class="sub-footer">
+                <div class="chu">
+                    <div class="end">
+                        <span>©</span>
+                        <span>HeroBiz</span>
+                        <span>. All Rights<span>
+                    </div>
+                    <div class="designed">
+                        <span>Designed</span>
+                        <span><a href="">BootstrapMade</a></span>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-same"></div>
+                    <div class="block-same"></div>
+                    <div class="block-same"></div>
+                    <div class="block-same"></div>
+                    <div class="block-same"></div>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../lib/owl/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel();
+        });
+
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                1000: {
+                    items: 1,
+                },
+            },
+        });
+    </script>
+    
 </body>
 
 </html>
