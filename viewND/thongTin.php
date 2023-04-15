@@ -44,6 +44,8 @@
                 <input type="text" name="name" id="">
                 <p for="">địa chỉ</p>
                 <input type="text" name="diachi" id="">
+                <p for="">Tổng tiền</p>
+                <input type="text" value="<?php echo $_GET['id']?>" name="tongTien" id="">
             </div>
             <button>mua</button>
         </form>
