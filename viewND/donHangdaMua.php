@@ -29,11 +29,23 @@ if (isset($_SESSION['id'])&&($_SESSION['id']>0)) {
     .c:hover .b{
     display: block;
     }
-    .b{
-        padding: 40px;
+    .b {
+        /* padding: 40px; */
         position: absolute;
-        padding-left: 70px;
+        /* padding-left: 70px; */
         display: none;
+        z-index: 3;
+        bottom: 60px;
+        right: 135px;
+        padding: 0px 13px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        border-radius: 5px;
+        background-color: white;
+    }
+    .b p a{
+        text-decoration: none;
     }
     .c{
         display: flex;
@@ -75,8 +87,8 @@ if (isset($_SESSION['id'])&&($_SESSION['id']>0)) {
                 } else {
                     echo '<div class="c"><img class="a" src="../image/'.$_SESSION['image'].'" alt=""><p>'.$_SESSION['email'].'</p>
                     <div class="b">
-                    <p> <a href="../control/login_out.php">Đăng xuất</a></p>
-                    <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                    <p> <a href="../control/login_out.php">Đăng xuất</a></p><hr>
+                    <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p><hr>
                     <p>tài khoản của tôi</p>
                    </div>
                    </div>
