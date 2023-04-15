@@ -9,7 +9,7 @@
 </head>
 <body>
 <form action="../../control/control_themLoai.php" method="POST" enctype="multipart/form-data" class="w-[500px] m-auto">
-    <input type="text" name="loai" placeholder="Product Name" class="w-full border mt-8">
+    <input type="text" name="loai" placeholder="Product Name" class="w-full border mt-8" minlength="5xx">
    <button class="w-full bg-green-700 text-white mt-8">Add New</button>
   </form>
                 

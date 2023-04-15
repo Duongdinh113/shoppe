@@ -1,3 +1,9 @@
+<?php 
+    require "../../models/connect.php";
+    $id = $_GET["id"];
+    $query = "SELECT `id`, `id_bill`, `id_sp`, `sl`, `total_price` FROM `billdetail` WHERE id_bill = '$id'";
+    $billdetail = getAll($query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,19 +46,21 @@
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (1).png" alt=""><a href="product_management.php">Quản lý sản phẩm</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (2).png" alt=""><a href="quanLi_user.php">Quản lý user</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (3).png" alt=""><a href="./quanLi_danhMuc.php">Quản lý danh mục</a></li>
+                        <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (3).png" alt=""><a href="quanLi_binhLuan.php">Quản lý bình luận</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (4).png" alt=""><a href="./quanLi_donHang.php">Quản lí đơn hàng</a></li>
                         <li class="flex items-center gap-2 border-[1px] w-[200px] h-[40px] border-[orange] hover:bg-[orange] hover:text-[white] font-bold"><img class="w-[20px]" src="../../viewND/image/Vector (4).png" alt=""><a href="thongKe.php">Thống kê</a></li>
+                       
                     </ul>
                 </div>
             </div>
             <div>
                 <div class="max-w-[1000px]">
-                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Thống Kê</p>
+                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí user</p>
                     <img class="max-w-full" src="../../viewND/image/Rectangle 152.png" alt="">
                 </div>
                 <div class="">
                     <div class="my-[15px]">
-                        <form action="./thongke.php" method="POST">
+                        <form action="./quanLi_user.php" method="POST">
                             <div class="flex gap-2">
                                 <div>
                                     <img class="absolute pt-1 pl-1" src="../../viewND/image/Search.png" alt="">
@@ -68,90 +76,42 @@
     <table class="w-[1000px] h-[200px]">
         <thead>
             <tr class="bg-[black] h-[50px]">
-                <th class="text-[white]">Mã Danh Mục</th>
-                <th class="text-[white]">Tên Danh Mục</th>
-                <th class="text-[white]">Số Lượng </th>
-                <th class="text-[white]">Giá Cao Nhất</th>
-                <th class="text-[white]">Giá Thấp Nhất</th>
-                <th class="text-[white]">Giá Trung Bình</th>
-              
+                <th class="text-[white]">Tên sản phẩm</th>
+                <th class="text-[white]">Số lượng</th>
+                <th class="text-[white]">Giá</th>
+                <th><a class="text-[white]" href="./quanLi_donHang.php">back</a></th>
             </tr>
         </thead>
     
         <tbody>
-      <?php
-   require "../../models/connect.php";
 
             
-       $sql=" SELECT categoryid.iddm as maxdm, categoryid.namee as tendm, count(products.id) as countsp, MAX(products.price) as maxprice, MIN(products.price) as minprice, AVG(products.price) as avgprice FROM  categoryid JOIN products ON categoryid.iddm=products.class GROUP BY categoryid.iddm ";
-   
-       $listtk=getAll($sql);
-     
-            ?>
-            
-                <?php foreach( $listtk as $tk):?>
-                <tr>
-                   
-                    <td class="text-center">
-                        <?php echo $tk ["maxdm"]?>
-                    </td>
+                <?php foreach($billdetail as $item):?>
+                <tr>   
+                   <td>
+                        <?php $id_sp = $item['id_sp'];
+                        $query = "SELECT * FROM products WHERE id = $id_sp";
+                        $product = getOne($query);
+                        echo $product['name'];
+                        ?>
 
-                    <td>
-                    <?php echo $tk ["tendm"]?>
-                    </td>
-                    <td>
-                    <?php echo $tk ["countsp"]?>
-                    </td>
-                    <td>
-                    <?php echo $tk ["maxprice"]?>
-                    </td>
-
-                    <td>
-                    <?php echo $tk ["minprice"]?>
-                    </td>
-
-                    <td>
-                    <?php echo $tk ["avgprice"]?>
-                    </td>
+                   </td>
+                   <td>
+                    <?= $item['sl']?>
+                   </td>
+                   <td>
+                    <?= $item['total_price']?>
+                   </td>
+                
                 </tr>
-                <?php endforeach ?>
+                <?php endforeach?>
                 
         </tbody>
                 </table>
                 </div>
             </div>
-            
         </div>
-        <div id="piechart"></div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Loại sản phẩm');
-    data.addColumn('number', 'Số sản phẩm');
-
-    // Add rows to the data table using a loop
-    <?php foreach ($listtk as $tk): ?>
-      data.addRow(["<?php echo $tk["tendm"] ?>", <?php echo $tk["countsp"] ?>]);
-    <?php endforeach ?>
-
-    // Set chart options
-    var options = {
-      title: "Thống kê số sản phẩm theo loại",
-      pieHole: 1
-    };
-
-    // Instantiate and draw the chart
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    chart.draw(data, options);
-  }
-</script>
     </div>
-    
     
 </body>
 
