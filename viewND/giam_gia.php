@@ -11,26 +11,44 @@
 </head>
 <style>
     .box {
+        margin: 50px 0px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        margin-left: 10%;
+        border-radius: 5px;
+        gap: 25px;
+        background-color: #F4F4F4;
+        padding: 15px 15px;
     }
 
     .dell {
-        width: 500px;
-
-        margin-top: 10%;
-        height: 600px;
+        /* width: 500px; */
+        /* margin-top: 10%;
+        height: 600px; */
+        border-radius: 15px;
+        background-color: white;
     }
 
     .dell img {
-        width: 400px;
+        margin: 10px 10px;
+        width: 94%;
+        height: 300px;
     }
 
-    h2 {
+    h3 {
+        text-align: center;
         font-size: 25px;
-        font-weight: 600;
+        font-weight: 700;
         text-transform: capitalize;
+    }
+    .dell p{
+    padding-left: 30px;
+    }
+    .dell del {
+        padding: 0px 10px 30px 30px;
+    }
+    .dell h4 {
+        padding: 0px 10px 30px 30px;
+        font-size: 25px;
     }
 
     del {
@@ -48,10 +66,21 @@
     }
 
     .b {
-        padding: 40px;
+        /* padding: 40px; */
         position: absolute;
-        padding-left: 70px;
+        /* padding-left: 70px; */
         display: none;
+        z-index: 3;
+        bottom: 60px;
+        right: 135px;
+        padding: 0px 13px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .b p a{
+        text-decoration: none;
     }
 
     .c {
@@ -63,6 +92,14 @@
         border-radius: 50%;
         border: 0.1875em solid #0F1C3F;
         height: 50px;
+    }
+    .tieude{
+        padding-top: 100px;
+        text-align: center;
+    }
+    .tieude h2 {
+        background-color: #F4F4F4;
+        padding: 10px 10px;
     }
 </style>
 
@@ -98,8 +135,8 @@
                 } else {
                     echo '<div class="c"><img class="a" src="../image/' . $_SESSION['image'] . '" alt=""><p>' . $_SESSION['email'] . '</p>
                         <div class="b">
-                        <p> <a href="../control/login_out.php">Đăng xuất</a></p>
-                        <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p>
+                        <p> <a href="../control/login_out.php">Đăng xuất</a></p><hr>
+                        <p> <a href="./forgotPassword.php">Đổi mật khẩu</a></p><hr>
                         <p>tài khoản của tôi</p>
                        </div>
                        </div>
@@ -115,17 +152,18 @@
         ?>
         <div class="flex justify-center">
             <div>
+                <div class="tieude">
+                <h2>SALE KHUYẾN MÃI SỐC</h2>
+                </div>
                 <div class="box">
+                    
                     <?php foreach ($productList as $item1) : ?>
                         <div class="dell">
-
-
                             <img src="<?= "../image/" . $item1["image"] ?>" alt="">
-                            <h2><?= $item1["name"] ?></h2>
+                            <h3><?= $item1["name"] ?></h3>
                             <p><?= $item1["descrtiption"] ?></p>
                             <del><?= $item1["price"] . "$" ?></del>
-                            <h3 class=""><?= $item1["deal"] . "$" ?></h3>
-
+                            <h4 class=""><?= $item1["deal"] . "$" ?></h4>
                         </div>
                     <?php endforeach ?>
                 </div>
