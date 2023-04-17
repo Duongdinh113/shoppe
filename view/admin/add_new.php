@@ -16,6 +16,7 @@
         <input type="file" name="product-image" class="w-full border mt-8">
         <input type="text" name="product-price" placeholder="Product Price" class="w-full border mt-8">
         <input type="text" name="deal" placeholder="deal" class="w-full border mt-8">
+        <input type="text" name="number" placeholder="number" class="w-full border mt-8">
         <select name="category" id=""  class="w-full border mt-8">
             <?php
             require_once "../../models/connect.php";

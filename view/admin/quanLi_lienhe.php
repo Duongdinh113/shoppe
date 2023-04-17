@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Quản lí sản phẩm</title>
+    <title>Document</title>
     <style>
         table,
         th,
@@ -22,32 +22,23 @@
     ?>
 
     <div>
-        <div class="flex justify-between mx-[30px] mt-5">
+        <div class="flex justify-between mx-[20px]">
             <div class="">
-                <img src="../../viewND/image/logo_1.1.png" alt="">
+                <img src="../../viewND/image/logo.png" alt="">
             </div>
             <div class="flex ">
-                <div class="flex mt-4">
-                    <p class="mr-2">Xin chào
+                <div class="flex">
+                    <p>xin chào
                     <div class="text-[#37A9CD]">
                         <?php echo $_SESSION["email"] ?>
-                    </div><a href="../../control/login_out.php">
-
-                        <button class="p-2 border-[1px] bg-[#38A169] hover:text-[white]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                            </svg>
-
-
-                        </button>
-                    </a></p>
-
+                    </div><a href="../../control/login_out.php"><button
+                            class="border-[1px] bg-[#38A169] rounded hover:text-[white]">logout</button></a></p>
+                    <img src="" alt="">
                 </div>
             </div>
         </div>
-        <div class="flex gap-5 justify-between my-[30px]">
+        <div class="flex gap-5 justify-between mx-[30px] my-[50px]">
+        <div class="flex gap-5 justify-between  my-[20px]">
             <div class="border-r-[1px] border-[#CBD5E0]">
                 <div class="flex mt-[24px]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -121,6 +112,7 @@
                     </a>
 
                 </div>
+
                 <div class="flex mt-[24px] ml-[20px]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
@@ -146,106 +138,67 @@
 
                 </div>
             </div>
+            </div>
             <div>
-                <div class="max-w-[1000px] mr-[140px]">
-                    <p class="absolute text-[white] font-bold right-[600px] top-[160px]">Quản lý sản phẩm</p>
-                    <img class="" src="../../viewND/image/Rectangle 152.png" alt="">
+                <div class="max-w-[1000px]">
+                    <p class="absolute text-[white] font-bold right-[450px] top-[170px]">Quản lí liên hệ </p>
+                    <img class="max-w-full" src="../../viewND/image/Rectangle 152.png" alt="">
                 </div>
                 <div class="">
-                    <div class="my-[15px]">
-                        <form action="./product_management.php" method="POST">
-                            <div class="flex gap-2">
-                                <div>
-                                    <img class="absolute pt-1 pl-1" src="../../viewND/image/Search.png" alt="">
-                                    <input class="border-[1px] border-[black] p-1 rounded pl-[30px]"
-                                        placeholder="Tìm kiếm" type="text" name="search">
-                                </div>
-                                <div>
-                                    <button
-                                        class="border-[3px] border-[#38A169] p-1 rounded text-[white] font-bold bg-[#38A169]">Search</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+
 
                     <table class="w-[1000px] h-[200px]">
                         <thead>
                             <tr class="bg-[black] h-[50px]">
-                                <th class="text-[white]">Id</th>
-                                <th class="text-[white]">Product Name</th>
-                                <th class="text-[white]">Product Desc</th>
-                                <th class="text-[white]">Product Image</th>
-                                <th class="text-[white]">Product Price</th>
-                                <th class="text-[white]">Số lượng</th>
-                                <th class="text-[white]">Category</th>
-                                <th class="text-[white]">Action</th>
+                                
+                                <th class="text-[white]">id </th>
+                                <th class="text-[white]">Họ Tên </th>
+                                <th class="text-[white]">Số Điện Thoại </th>
+                                <th class="text-[white]">Email </th>
+                                <th class="text-[white]">vấn đề </th>
+
                             </tr>
                         </thead>
 
                         <tbody>
+                        <?php
+               require "../../models/connect.php";
+           
+                $user = "SELECT * FROM contact";
+            
+            $contactList = getAll($user);               
+               
+            ?>
+
                             <?php
-                            require "../../models/connect.php";
-
-
-                            if (empty($_POST["search"])) {
-                                $sanpham = "SELECT * FROM products";
-                            } else {
-                                $search = $_POST["search"];
-
-                                $sanpham = "SELECT * FROM products WHERE name LIKE '%$search%'";
-                            }
-                            $productList = getAll($sanpham);
-
-                            ?>
-
-                            <a href="add_new.php"><button
-                                    class="mb-[40px] mt-[10px] border-[1px] w-[200px] h-[30px] rounded-[10px] bg-[#38A169] text-[white] font-bold">Add
-                                    New Product</button></a>
-
-                            <?php foreach ($productList as $product): ?>
+                            
+                            foreach ($contactList as $contact): ?>
                                 <tr>
 
                                     <td class="text-center">
-                                        <?php echo $product["id"] ?>
+                                        <?php 
+                                     
+                                        echo $contact["id_c"] ?>
                                     </td>
                                     <td>
-                                        <?php echo $product["name"] ?>
+                                        <?php echo $contact["name"] ?>
                                     </td>
                                     <td>
-                                        <?php echo $product["descrtiption"] ?>
+                                        <?php echo $contact["sdt"] ?>
                                     </td>
-                                    <td><img class="w-[50px]" src="<?php echo "../../image/" . $product["image"] ?>" alt="">
-                                    </td>
+                                   
                                     <td>
-                                        <?php echo $product["price"] ?>
-                                    </td>
-                                    <td>
-                                    <?php echo $product["number"] ?>
-                                    </td>
-                                    <td>
-                                        <?php
-                                        $cateId = $product["class"];
-                                        $query = "SELECT * FROM categoryid WHERE iddm=$cateId";
-                                        $category = getOne($query);
-                                        echo $category["namee"];
-                                        ?>
-                                    </td>
-                                    <td class="text-center">
-
-                                        <a href="update.php?id=<?php echo $product["id"] ?>"><button
-                                                class="border-[1px] rounded w-[60px] bg-[#1E74A4] text-[white]">Update</button></a>
-                                        <a href="../../control/control_delete.php?id=<?php echo $product["id"] ?>"><button
-                                                onclick="return confirm('Bạn có chắc muốn xóa')"
-                                                class="border-[1px] rounded w-[60px] bg-[red] text-[white]">Xóa</button></a>
-
+                                        <?php echo $contact["email"] ?>
                                     </td>
 
+                                    <td>
+                                        <?php echo $contact["vande"] ?>
+                                    </td>
                                 </tr>
                             <?php endforeach ?>
 
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
