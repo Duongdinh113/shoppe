@@ -27,7 +27,6 @@
         <input type="file" name="product-image" class="w-full border mt-8">
         <input type="text" name="old-image" value="<?php echo $product['image']?>" hidden>
         <input type="text" name="product-price" placeholder="Product Price" class="w-full border mt-8" value="<?php echo $product["price"]?>">
-        <input type="text" name="number" placeholder="Product number" class="w-full border mt-8" value="<?php echo $product["number"]?>">
         <select name="category" id=""  class="w-full border mt-8">
             <?php
             require_once "../../models/connect.php";
@@ -37,7 +36,7 @@
             // var_dump($categoryList);
             ?>
             <?php foreach($categoryList as $cate):?>
-                <option value="<?php echo $cate["iddm"]?>"><?php echo $cate["namee"]?></option>
+                <option value="<?php echo $cate["id"]?>"><?php echo $cate["name"]?></option>
             <?php endforeach?>
         </select>
         <button class="w-full bg-green-700 text-white mt-8">update</button>
